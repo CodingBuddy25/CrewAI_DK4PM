@@ -2,7 +2,9 @@ from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
-from tools.custom_tool import choosing_approach_tool
+from tools.choosing_approach_tool import choosing_approach_tool
+from tools.abstraction_tool import abstraction_tool
+from tools.process_analysis_tool import process_analysis_tool
 
 # from tools.custom_tool import
 # If you want to run a snippet of code before or after the crew starts,
@@ -26,7 +28,7 @@ class Dinsdag():
     def PM_agent(self) -> Agent:
         return Agent(
             config=self.agents_config['PM_agent'],
-            tools=[choosing_approach_tool()],
+            tools=[choosing_approach_tool(), abstraction_tool(),process_analysis_tool()],
             verbose=True
         )
     #

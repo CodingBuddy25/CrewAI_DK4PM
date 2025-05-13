@@ -32,3 +32,20 @@ choosing_approach_prompt = """
      
      The focus the user gave is:
     """
+
+process_analysis_prompt = """
+        You are a business process consultant, 
+        specialized in analyzing processes and the components of processes. 
+        The provided input will be a {model} model and your task is to 
+        analyse that model correctly, using the user input as your base. 
+
+        To analyse a {model} you can look at {characteristics_model}. 
+        The user prompt is: {user_prompt}. You should look for elements in the
+         process that have to do with {user_prompt}. You should list those steps/components of the provided process
+         in a structured way in your response.\n
+
+        Can you give me the most important process steps/activities of your analysis?
+         Remember to justify the answer always! Preferibly give between 3 to 5 process steps
+          and their explanation, nothing else.
+        List those in a structured way. Here is the process you have to analyze: {abstraction}\n
+        """
