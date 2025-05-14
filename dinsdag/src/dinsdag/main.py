@@ -17,10 +17,17 @@ def run():
     """
     Run the crew.
     """
+    #DFG is the default plot
+    focus = str(input("What is the focus of your research? e.g. bottlenecks, financial risks, IT and Cyber risks, audit risk"))
+    company = str(input("What is the company your research? e.g. Google, IKEA, proctor and gamble (P&G)"))
+    process = str(input("What is the process your research should analyse? e.g. loan application, purchase-to-pay, IT incident handling, order to cash"))
+    filename = str(input("What is the filename (stored int he Event_logs folder) do you want to analyse? e.g. O2C.csv"))
     inputs = {
-        'process': 'order to cash',
-        'company': 'proctor and gamble (P&G)',
-        'focus': 'financial risks'
+        'process': process,
+        'company': company,
+        'focus': focus,
+        'chosen_approach': 'DFG',
+        'filename': filename
     }
     
     try:

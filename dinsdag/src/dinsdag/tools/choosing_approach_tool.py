@@ -20,9 +20,12 @@ class choosing_approach_tool(BaseTool):
         model = ChatOpenAI(temperature=0, model_name="gpt-4o-mini")
         formatted_prompt = choosing_approach_prompt + focus
         response = model.invoke(formatted_prompt)
-        print("the response is:", response.content)
-        return response.content
-
+        response = response.content
+        print("the response is:", response)
+        if response in ['DFG', 'Variants', 'Temporal Profile']:
+            return response
+        else:
+            return "Unable to find the right approach, try again with another analysis or explain in more detail what needs to be analysed"
 
 
     def _arun(self, question: str):

@@ -40,12 +40,12 @@ process_analysis_prompt = """
         analyse that model correctly, using the user input as your base. 
 
         To analyse a {model} you can look at {characteristics_model}. 
-        The user prompt is: {user_prompt}. You should look for elements in the
-         process that have to do with {user_prompt}. You should list those steps/components of the provided process
+        You should look for elements in the {process} process that have to do with {focus}. 
+        You should list those steps/components of the provided process
          in a structured way in your response.\n
 
         Can you give me the most important process steps/activities of your analysis?
-         Remember to justify the answer always! Preferibly give between 3 to 5 process steps
+         Remember to justify the answer always! Preferably give between 3 to 5 process steps
           and their explanation, nothing else.
         List those in a structured way. Here is the process you have to analyze: {abstraction}\n
         """

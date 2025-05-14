@@ -31,27 +31,27 @@ class Dinsdag():
             tools=[choosing_approach_tool(), abstraction_tool(),process_analysis_tool()],
             verbose=True
         )
-    #
-    # @agent
-    # def DK_company_agent(self) -> Agent:
-    #     return Agent(
-    #         config=self.agents_config['DK_company_agent'], # type: ignore[index]
-    #         verbose=True
-    #     )
-    #
-    # @agent
-    # def DK_process_agent(self) -> Agent:
-    #     return Agent(
-    #         config=self.agents_config['DK_process_agent'], # type: ignore[index]
-    #         verbose=True
-    #     )
-    #
-    # @agent
-    # def writing_agent(self) -> Agent:
-    #     return Agent(
-    #         config=self.agents_config['writing_agent'], # type: ignore[index]
-    #         verbose=True
-    #     )
+
+    @agent
+    def DK_company_agent(self) -> Agent:
+        return Agent(
+            config=self.agents_config['DK_company_agent'], # type: ignore[index]
+            verbose=True
+        )
+
+    @agent
+    def DK_process_agent(self) -> Agent:
+        return Agent(
+            config=self.agents_config['DK_process_agent'], # type: ignore[index]
+            verbose=True
+        )
+
+    @agent
+    def writing_agent(self) -> Agent:
+        return Agent(
+            config=self.agents_config['writing_agent'], # type: ignore[index]
+            verbose=True
+        )
 
     # To learn more about structured task outputs,
     # task dependencies, and task callbacks, check out the documentation:
@@ -62,25 +62,25 @@ class Dinsdag():
         return Task(
             config=self.tasks_config['PM_diagnostic'], # type: ignore[index]
         )
-    #
-    # @task
-    # def DK_company_search(self) -> Task:
-    #     return Task(
-    #         config=self.tasks_config['DK_company_search'], # type: ignore[index]
-    #     )
-    #
-    # @task
-    # def DK_process_search(self) -> Task:
-    #     return Task(
-    #         config=self.tasks_config['DK_process_search'], # type: ignore[index]
-    #     )
-    #
-    # @task
-    # def writing_task(self) -> Task:
-    #     return Task(
-    #         config=self.tasks_config['writing_task'], # type: ignore[index]
-    #         output_file='report.md'
-    #     )
+
+    @task
+    def DK_company_search(self) -> Task:
+        return Task(
+            config=self.tasks_config['DK_company_search'], # type: ignore[index]
+        )
+
+    @task
+    def DK_process_search(self) -> Task:
+        return Task(
+            config=self.tasks_config['DK_process_search'], # type: ignore[index]
+        )
+
+    @task
+    def writing_task(self) -> Task:
+        return Task(
+            config=self.tasks_config['writing_task'], # type: ignore[index]
+            output_file='report.md'
+        )
 
     @crew
     def crew(self) -> Crew:

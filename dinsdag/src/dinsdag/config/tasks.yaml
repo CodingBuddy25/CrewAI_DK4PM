@@ -4,26 +4,26 @@ PM_diagnostic:
   expected_output: >
     A detailed description (with examples) of the most important areas in the event log. They can be bottlenecks or really crucial/large events in the event log.
   agent: PM_agent
-#
-#DK_company_search:
-#  description: >
-#    Conduct a thorough research about {company}
-#  expected_output: >
-#    A list with 10 bullet points of the most relevant information about {company}
-#  agent: DK_company_agent
-#
-#DK_process_search:
-#  description: >
-#    Conduct a thorough research about {process}
-#
-#  expected_output: >
-#    A list with 10 bullet points of the most relevant information about {process}
-#  agent: DK_process_agent
-#
-#writing_task:
-#  description: >
-#    Review the contents from both researches and weave them together into a coherent report which combines the {process} with the {company}.
-#    You may leave out information that seems irrelevant. Provide links for references if possible.
-#  expected_output: >
-#    Formatted as markdown without '```'
-#  agent: writing_agent
+
+DK_company_search:
+  description: >
+    Conduct a thorough research about {company}
+  expected_output: >
+    A list with 10 bullet points of the most relevant information about {company}
+  agent: DK_company_agent
+
+DK_process_search:
+  description: >
+    Conduct a thorough research about {process}
+
+  expected_output: >
+    A list with 10 bullet points of the most relevant information about {process}
+  agent: DK_process_agent
+
+writing_task:
+  description: >
+    Review the contents from both researches and weave them together into a coherent report which combines the {process} with the {company}.
+    You may leave out information that seems irrelevant. Provide links for references if possible.
+  expected_output: >
+    Formatted as markdown without '```'
+  agent: writing_agent

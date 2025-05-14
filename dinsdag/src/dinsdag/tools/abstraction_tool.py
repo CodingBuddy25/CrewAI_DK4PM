@@ -5,9 +5,9 @@ from crewai.tools import BaseTool
 from typing import Type
 from pydantic import BaseModel
 
-from metadata_abstraction_tool import CSV_format_O2C
-from metadata_abstraction_tool import CSV_format_P2P
-from metadata_abstraction_tool import CSV_format_AP
+from .metadata_abstraction_tool import CSV_format_O2C
+from .metadata_abstraction_tool import CSV_format_P2P
+from .metadata_abstraction_tool import CSV_format_AP
 
 import pandas as pd
 import pm4py
@@ -26,8 +26,10 @@ class abstraction_tool(BaseTool):
     args_schema: Type[BaseModel] = abstraction_tool_inputs
 
     def _run(self, filename: str, chosen_approach:str) -> str:
-        workingDirectory = os.path.dirname(sys.argv[0])
-        file_path = os.path.join(workingDirectory, "Event_logs", filename)
+        # workingDirectory = os.path.dirname(sys.argv[0])
+        workingDirectory = os.path.dirname(os.path.abspath(filename))
+        # print(os.getcwd(), "is the current working directory")
+        file_path = os.path.join(workingDirectory, "tools", "Event_logs", filename)
 
         # Distinction between CSV and XES file formats
         if filename == "O2C.csv":
