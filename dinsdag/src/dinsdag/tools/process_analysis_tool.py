@@ -39,6 +39,7 @@ class process_analysis_tool(BaseTool):
         response = model.invoke(formatted_prompt)
         response = response.content
         print("the conclusion is: ", response)
+
         return response
 
     def _arun(self, question: str):
