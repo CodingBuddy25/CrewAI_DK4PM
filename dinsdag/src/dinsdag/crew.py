@@ -2,14 +2,13 @@ from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
+
 from tools.choosing_approach_tool import choosing_approach_tool
 from tools.abstraction_tool import abstraction_tool
 from tools.process_analysis_tool import process_analysis_tool
+
 from tools.tavily_search_company import tavily_search_company
-# from tools.custom_tool import
-# If you want to run a snippet of code before or after the crew starts,
-# you can use the @before_kickoff and @after_kickoff decorators
-# https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
+from tools.tavily_search_process import tavily_search_process
 
 @CrewBase
 class Dinsdag():
@@ -22,66 +21,62 @@ class Dinsdag():
     # Agents: https://docs.crewai.com/concepts/agents#yaml-configuration-recommended
     # Tasks: https://docs.crewai.com/concepts/tasks#yaml-configuration-recommended
     
-    # If you would like to add tools to your agents, you can learn more about it here:
-    # https://docs.crewai.com/concepts/agents#agent-tools
-    # @agent
-    # def PM_agent(self) -> Agent:
-    #     return Agent(
-    #         config=self.agents_config['PM_agent'],
-    #         tools=[choosing_approach_tool(), abstraction_tool(),process_analysis_tool()],
-    #         verbose=True
-    #     )
+
+    @agent
+    def PM_agent(self) -> Agent:
+        return Agent(
+            config=self.agents_config['PM_agent'],
+            tools=[choosing_approach_tool(), abstraction_tool(),process_analysis_tool()],
+            verbose=True
+        )
 
     @agent
     def DK_company_agent(self) -> Agent:
         return Agent(
             config=self.agents_config['DK_company_agent'], # type: ignore[index]
             verbose=True,
-            tools=[tavily_search_company]
+            tools=[tavily_search_company()]
         )
-    #
-    # @agent
-    # def DK_process_agent(self) -> Agent:
-    #     return Agent(
-    #         config=self.agents_config['DK_process_agent'], # type: ignore[index]
-    #         verbose=True
-    #     )
-    #
-    # @agent
-    # def writing_agent(self) -> Agent:
-    #     return Agent(
-    #         config=self.agents_config['writing_agent'], # type: ignore[index]
-    #         verbose=True
-    #     )
-    #
-    # # To learn more about structured task outputs,
-    # task dependencies, and task callbacks, check out the documentation:
-    # https://docs.crewai.com/concepts/tasks#overview-of-a-task
 
-    # @task
-    # def PM_diagnostic(self) -> Task:
-    #     return Task(
-    #         config=self.tasks_config['PM_diagnostic'], # type: ignore[index]
-    #     )
+    @agent
+    def DK_process_agent(self) -> Agent:
+        return Agent(
+            config=self.agents_config['DK_process_agent'], # type: ignore[index]
+            verbose=True,
+        tools = [tavily_search_process()]
+        )
+
+    @agent
+    def writing_agent(self) -> Agent:
+        return Agent(
+            config=self.agents_config['writing_agent'], # type: ignore[index]
+            verbose=True
+        )
+
+    @task
+    def PM_diagnostic(self) -> Task:
+        return Task(
+            config=self.tasks_config['PM_diagnostic'], # type: ignore[index]
+        )
 
     @task
     def DK_company_search(self) -> Task:
         return Task(
             config=self.tasks_config['DK_company_search'], # type: ignore[index]
         )
-    #
-    # @task
-    # def DK_process_search(self) -> Task:
-    #     return Task(
-    #         config=self.tasks_config['DK_process_search'], # type: ignore[index]
-    #     )
-    #
-    # @task
-    # def writing_task(self) -> Task:
-    #     return Task(
-    #         config=self.tasks_config['writing_task'], # type: ignore[index]
-    #         output_file='report.md'
-    #     )
+
+    @task
+    def DK_process_search(self) -> Task:
+        return Task(
+            config=self.tasks_config['DK_process_search'], # type: ignore[index]
+        )
+
+    @task
+    def writing_task(self) -> Task:
+        return Task(
+            config=self.tasks_config['writing_task'], # type: ignore[index]
+            output_file='report.md'
+        )
 
     @crew
     def crew(self) -> Crew:
