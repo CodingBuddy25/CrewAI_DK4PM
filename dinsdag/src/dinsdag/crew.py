@@ -22,13 +22,13 @@ class Dinsdag():
     # Tasks: https://docs.crewai.com/concepts/tasks#yaml-configuration-recommended
     
 
-    @agent
-    def PM_agent(self) -> Agent:
-        return Agent(
-            config=self.agents_config['PM_agent'],
-            tools=[choosing_approach_tool(), abstraction_tool(),process_analysis_tool()],
-            verbose=True
-        )
+    # @agent
+    # def PM_agent(self) -> Agent:
+    #     return Agent(
+    #         config=self.agents_config['PM_agent'],
+    #         tools=[choosing_approach_tool(), abstraction_tool(),process_analysis_tool()],
+    #         verbose=True
+    #     )
 
     @agent
     def DK_company_agent(self) -> Agent:
@@ -53,11 +53,11 @@ class Dinsdag():
             verbose=True
         )
 
-    @task
-    def PM_diagnostic(self) -> Task:
-        return Task(
-            config=self.tasks_config['PM_diagnostic'], # type: ignore[index]
-        )
+    # @task
+    # def PM_diagnostic(self) -> Task:
+    #     return Task(
+    #         config=self.tasks_config['PM_diagnostic'], # type: ignore[index]
+    #     )
 
     @task
     def DK_company_search(self) -> Task:

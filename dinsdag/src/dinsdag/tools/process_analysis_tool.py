@@ -39,20 +39,6 @@ class process_analysis_tool(BaseTool):
                                                           abstraction=abstraction, process=process)
         response = model.invoke(formatted_prompt)
         response = response.content
-        print("the conclusion is: ", response, "\n ______________________________________________ \n The content above was written to the file. ")
-
-        #saving the results to a file
-        base_dir = os.getcwd()
-        print("The base directory is", base_dir)
-        folder_path = os.path.join(base_dir, "tools", "process_analysis_results")
-        files = [file_name for file_name in os.listdir(folder_path) if
-                 (os.path.isfile(f"tools/process_analysis_results/{file_name}") and file_name.endswith('.txt'))]
-
-        number_files = len(files)
-        output_file = open(f"process_analysis_results/output_{number_files}.txt", "w")
-        output_file.write(response)
-        output_file.close()
-
         return response
 
     def _arun(self, question: str):
