@@ -21,8 +21,9 @@ DK_process_search:
 
 writing_task:
   description: >
-    Review the contents from both researches and the PM diagnostic task and weave them together into a coherent report which combines the {process} with the {company} with the steps from the result of the PM_agent analysis / PM_diagnostic task. 
-    You may leave out information that seems irrelevant. Provide links for references if possible.
+    Review the contents from both researches and the PM diagnostic task and weave them together into a coherent report of at least 1500 words which combines the {process} with the {company} with the steps from the result of the PM_agent analysis / PM_diagnostic task. 
+    You may leave out information that seems irrelevant. Provide links for references if possible.     Use at least 20 relevant references in the paper (if possible) and at most 40 references.
+
   expected_output: >
     Formatted as markdown without '```', at least a 1500 word essay. 
     You can combine the knowledge and weave them into a well-analysed report 
@@ -30,7 +31,6 @@ writing_task:
     the outputs: {skip_analysis} and {skip_flow}, and reference to the particular step that you are talking about 
     using the format 'Send Purchase Order -> Receive Goods'. It is important that 
     in every paragraph you fully reference to at least one source link from the research agents AND to a relevant step from the results of the PM_agent / the PM diagnostic task.
-    Use at least 20 relevant references in the paper (if possible) and at most 40 references.
     Add an overview of all the used references at the bottom of the report in this format:
     ## References
 
