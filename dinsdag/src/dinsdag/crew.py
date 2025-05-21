@@ -6,6 +6,7 @@ from typing import List
 from tools.choosing_approach_tool import choosing_approach_tool
 from tools.abstraction_tool import abstraction_tool
 from tools.process_analysis_tool import process_analysis_tool
+from tools.file_writing_tool import writing_file_tool
 
 from tools.tavily_search_company import tavily_search_company
 from tools.tavily_search_process import tavily_search_process
@@ -26,7 +27,7 @@ class Dinsdag():
     # def PM_agent(self) -> Agent:
     #     return Agent(
     #         config=self.agents_config['PM_agent'],
-    #         tools=[choosing_approach_tool(), abstraction_tool(),process_analysis_tool()],
+    #         tools=[choosing_approach_tool(), abstraction_tool(),process_analysis_tool(), writing_file_tool()],
     #         verbose=True
     #     )
 
@@ -35,7 +36,7 @@ class Dinsdag():
         return Agent(
             config=self.agents_config['DK_company_agent'], # type: ignore[index]
             verbose=True,
-            tools=[tavily_search_company()]
+            tools=[tavily_search_company(), writing_file_tool()]
         )
 
     @agent
@@ -43,46 +44,45 @@ class Dinsdag():
         return Agent(
             config=self.agents_config['DK_process_agent'], # type: ignore[index]
             verbose=True,
-        tools = [tavily_search_process()]
+            tools = [tavily_search_process(), writing_file_tool()]
         )
 
     @agent
     def writing_agent(self) -> Agent:
         return Agent(
             config=self.agents_config['writing_agent'], # type: ignore[index]
-            verbose=True
+            verbose=True,
+            tools=[writing_file_tool()]
         )
 
     # @task
     # def PM_diagnostic(self) -> Task:
     #     return Task(
-    #         config=self.tasks_config['PM_diagnostic'], # type: ignore[index]
+    #         config=self.tasks_config['PM_diagnostic'],
     #     )
 
     @task
     def DK_company_search(self) -> Task:
         return Task(
-            config=self.tasks_config['DK_company_search'], # type: ignore[index]
+            config=self.tasks_config['DK_company_search'],
         )
 
     @task
     def DK_process_search(self) -> Task:
         return Task(
-            config=self.tasks_config['DK_process_search'], # type: ignore[index]
+            config=self.tasks_config['DK_process_search'],
         )
 
     @task
     def writing_task(self) -> Task:
         return Task(
-            config=self.tasks_config['writing_task'], # type: ignore[index]
+            config=self.tasks_config['writing_task'],
             output_file='report.md'
         )
 
     @crew
     def crew(self) -> Crew:
         """Creates the Dinsdag crew"""
-        # To learn how to add knowledge sources to your crew, check out the documentation:
-        # https://docs.crewai.com/concepts/knowledge#what-is-knowledge
 
         return Crew(
             agents=self.agents, # Automatically created by the @agent decorator
