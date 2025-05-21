@@ -27,7 +27,7 @@ class Dinsdag():
     # def PM_agent(self) -> Agent:
     #     return Agent(
     #         config=self.agents_config['PM_agent'],
-    #         tools=[choosing_approach_tool(), abstraction_tool(),process_analysis_tool(), writing_file_tool()],
+    #         tools=[choosing_approach_tool(), abstraction_tool(),process_analysis_tool()],
     #         verbose=True
     #     )
 
@@ -36,7 +36,7 @@ class Dinsdag():
         return Agent(
             config=self.agents_config['DK_company_agent'], # type: ignore[index]
             verbose=True,
-            tools=[tavily_search_company(), writing_file_tool()]
+            tools=[tavily_search_company()]
         )
 
     @agent
@@ -44,7 +44,7 @@ class Dinsdag():
         return Agent(
             config=self.agents_config['DK_process_agent'], # type: ignore[index]
             verbose=True,
-            tools = [tavily_search_process(), writing_file_tool()]
+            tools = [tavily_search_process()]
         )
 
     @agent
@@ -52,7 +52,7 @@ class Dinsdag():
         return Agent(
             config=self.agents_config['writing_agent'], # type: ignore[index]
             verbose=True,
-            tools=[writing_file_tool()]
+            tools=[]
         )
 
     # @task
