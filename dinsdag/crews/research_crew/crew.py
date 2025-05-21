@@ -1,15 +1,15 @@
-from crewai import Agent, Crew, Process, Task
+from crewai import Agent, Crew, Process, Task, Flow
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 
-from tools.choosing_approach_tool import choosing_approach_tool
-from tools.abstraction_tool import abstraction_tool
-from tools.process_analysis_tool import process_analysis_tool
-from tools.file_writing_tool import writing_file_tool
+# from tools.choosing_approach_tool import choosing_approach_tool
+# from tools.abstraction_tool import abstraction_tool
+# from tools.process_analysis_tool import process_analysis_tool
+# from dinsdag.crews.research_crew.tools.file_writing_tool import writing_file_tool
 
-from tools.tavily_search_company import tavily_search_company
-from tools.tavily_search_process import tavily_search_process
+from dinsdag.crews.research_crew.tools.tavily_search_company import tavily_search_company
+from dinsdag.crews.research_crew.tools.tavily_search_process import tavily_search_process
 
 @CrewBase
 class Dinsdag():
@@ -91,3 +91,7 @@ class Dinsdag():
             verbose=True,
             # process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
         )
+
+
+class ResearchCrew:
+    pass
