@@ -162,8 +162,8 @@
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "#FF5A50", "fixed": true, "font": {"color": "#FFFFFF", "multi": "html"}, "id": "first_method", "label": "First Method", "margin": {"bottom": 8, "left": 10, "right": 10, "top": 10}, "physics": false, "shape": "box", "x": 0.0, "y": 0}, {"color": "#333333", "fixed": true, "font": {"color": "#FFFFFF", "multi": "html"}, "id": "second_method", "label": "Second Method", "margin": {"bottom": 8, "left": 10, "right": 10, "top": 10}, "physics": false, "shape": "box", "x": 0.0, "y": 150}]);
-                  edges = new vis.DataSet([{"arrows": "to", "color": "#666666", "dashes": false, "from": "first_method", "smooth": {"type": "continuous"}, "to": "second_method", "width": 2}]);
+                  nodes = new vis.DataSet([{"color": "#FF5A50", "fixed": true, "font": {"color": "#FFFFFF", "multi": "html"}, "id": "PM_agent", "label": "Pm Agent", "margin": {"bottom": 8, "left": 10, "right": 10, "top": 10}, "physics": false, "shape": "box", "x": 0.0, "y": 0}, {"color": "#333333", "fixed": true, "font": {"color": "#FFFFFF", "multi": "html"}, "id": "DK_company_agent", "label": "Dk Company Agent", "margin": {"bottom": 8, "left": 10, "right": 10, "top": 10}, "physics": false, "shape": "box", "x": 0.0, "y": 150}, {"color": "#333333", "fixed": true, "font": {"color": "#FFFFFF", "multi": "html"}, "id": "DK_process_agent", "label": "Dk Process Agent", "margin": {"bottom": 8, "left": 10, "right": 10, "top": 10}, "physics": false, "shape": "box", "x": 0.0, "y": 300}]);
+                  edges = new vis.DataSet([{"arrows": "to", "color": "#666666", "dashes": false, "from": "PM_agent", "smooth": {"type": "continuous"}, "to": "DK_company_agent", "width": 2}, {"arrows": "to", "color": "#666666", "dashes": false, "from": "DK_company_agent", "smooth": {"type": "continuous"}, "to": "DK_process_agent", "width": 2}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });

@@ -1,40 +1,36 @@
 from crewai.flow.flow import Flow, listen, start
-from pydantic import BaseModel
-from dinsdag.crews.research_crew.crew import Dinsdag
+
+from PM_agent import PM_agent
+from DK_agent_company import DK_agent_company
+from DK_agent_process import DK_agent_process
+from WriterAgent import WriterAgent
+import asyncio
 
 
-class ResearchCrew(BaseModel):
-    result: str
-
-
-class ResearchCrewFlow(Flow[ResearchCrew]):
+class ResearchCrewFlow(Flow):
 
     @start()
-    def generate_poem(self):
-        print("Generating poem")
-        result = Dinsdag().crew().kickoff()
+    def PM_agent(self):
+        PM_agent()
 
-        print("Poem generated", result.content)
-        self.state.result = result.content
+    @listen(PM_agent)
+    async def DK_company_agent(self):
+        await DK_agent_company()
 
-    @listen(generate_poem)
-    def save_poem(self):
-        print("Saving poem")
-        with open("poem.txt", "w") as f:
-            f.write(self.state.poem)
+    @listen(DK_company_agent)
+    async def DK_process_agent(self):
+        await DK_agent_process()
 
-
-
-def kickoff():
-    final_flow = ResearchCrewFlow()
-    final_flow.kickoff()
+    @listen(DK_process_agent)
+    def Writing(self):
+        WriterAgent()
 
 
-def plot():
-    final_flow = ResearchCrewFlow()
+async def kickoff():
+    final_flow = ResearchCrewFlow(inputs={"product": "AI-powered chatbots"})
     final_flow.plot("PoemFlowPlot")
+    await final_flow.kickoff_async()
 
 
 if __name__ == "__main__":
-    kickoff()
-    plot()
+    asyncio.run(kickoff())
