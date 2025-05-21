@@ -8,7 +8,7 @@ import asyncio
 
 
 class ResearchCrewFlow(Flow):
-
+    #the class Flow gets passed, try to use this for passing variables
     @start()
     def PM_agent(self):
         PM_agent()
