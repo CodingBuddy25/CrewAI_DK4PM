@@ -1,9 +1,6 @@
 # from langchain_core.prompts import ChatPromptTemplate
-# from langchain_core.tools import tool
 # from langchain_openai import ChatOpenAI
-# from langchain.tools import StructuredTool
 
-# other files in the directory
 from CSV_config import CSV_format_O2C
 from CSV_config import CSV_format_P2P
 from CSV_config import CSV_format_AP
@@ -55,8 +52,8 @@ def choosing_approach(specific_question):
     prompt = filled_template
 
     # retrieving reponse from LLM
-    # openai_key = os.getenv('OPENAI_API_KEY')
-    # approach = pm4py.llm.openai_query(prompt, api_key=openai_key, openai_model="gpt-4o-mini")
+    openai_key = os.getenv('OPENAI_API_KEY')
+    approach = pm4py.llm.openai_query(prompt, api_key=openai_key, openai_model="gpt-4o-mini")
     approach = "DFG"
     print("CHOSEN APPROACH: ", approach, "_______________________________________________--")
     if approach in ["DFG", "Variants", "Temporal Profile"]:
@@ -68,6 +65,7 @@ def choosing_approach(specific_question):
     return approach, flag
 
 def abstraction(filename, approach):
+    """Creates an abstraction of the event log. To run, uncomment the code."""
     workingDirectory = os.path.dirname(sys.argv[0])
     print(workingDirectory)
     fileName = os.path.join(workingDirectory, "Event_logs", filename)
@@ -108,10 +106,10 @@ Order Approval -> Send Invoice ( frequency = 755  performance = 259200.000 )"""
     return abstraction
 
 def process_analysis(abstraction_file, specific_question, approach):
-    # To Do -> add a better prompt
-    analyse_model = {"DFG": "hoi",
-                     "Temporal Profile": "doei",
-                     "Variants": "whatever"}
+    """Creates an analysis of the graph analysis. To run, uncomment the LLM prompt."""
+    analyse_model = {"DFG": "structural insights and identifying common paths",
+                     "Temporal Profile": "the timing and duration of process activities",
+                     "Variants": "comparing variants to identify best practices or areas for optimization"}
     model_analysis = analyse_model[approach]
     filled_template = Process_analysis_prompt.format(user_prompt=specific_question, model=approach,
                                                      characteristics_model=model_analysis)
@@ -151,4 +149,3 @@ def process_analysis(abstraction_file, specific_question, approach):
     output_file = open(f"Intermediate_results/Process_mining_agent/output_{number_files}.txt", "w")
     output_file.write(resp)
     output_file.close()
-    return resp

@@ -1,5 +1,7 @@
 from crewai.flow.flow import Flow, listen, start
+from pydantic import BaseModel
 
+from Introduction_agent import introduction_agent
 from PM_agent import PM_agent
 from DK_agent_company import DK_agent_company
 from DK_agent_process import DK_agent_process
@@ -7,46 +9,53 @@ from WriterAgent import WriterAgent
 import asyncio
 
 
-class ResearchCrewFlow(Flow):
-    #the class Flow gets passed, try to use this for passing variables
-    # This is from the other branch, possibly something like this will work?
-    # focus = str(
-    #     input("What is the focus of your research? e.g. bottlenecks, financial risks, IT and Cyber risks, audit risk"))
-    # company = str(input("What is the company your research? e.g. Google, IKEA, proctor and gamble (P&G)"))
-    # process = str(input(
-    #     "What is the process your research should analyse? e.g. loan application, purchase-to-pay, IT incident handling, order to cash"))
-    # filename = str(input("What is the filename (stored int he Event_logs folder) do you want to analyse? e.g. O2C.csv"))
-    # prompt_DK_company = f'Conduct a thorough research about {company}  using the context of {process} if you have it. Use the tavily_search_company and make sure that the research has many references.'
-    # prompt_DK_process = f'Conduct a thorough research about the {process} process using the context of {company} if you have it. Use the tavily_search_process and make sure that the research has many references.'
-    # inputs = {
-    #              'process': process,
-    #              'company': company,
-    #              'focus': focus,
-    #              'chosen_approach': 'DFG',
-    #              'filename': filename,
-    #              'prompt_DK_company': prompt_DK_company,
-    #              'prompt_DK_process': prompt_DK_process
-    # }
+class FlowState(BaseModel):
+    process: str = " "
+    company: str = " "
+    focus: str = " "
+    chosen_approach: str = " "
+    filename: str = " "
+    specific_question: str = " "
+
+
+class ResearchCrewFlow(Flow[FlowState]):
     @start()
+    def introduction_agent(self):
+        company, process, focus, file = introduction_agent()
+        self.state.company = company
+        self.state.process = process
+        self.state.focus = focus
+        self.state.filename = file
+
+        # option number 1
+        self.state.specific_question = f"Can you find the {focus} in the {process} process at {company}. What are potential causes for the {focus} that you identified?"
+
+        # #option number 2
+        # self.state.specific_question = f"Can you find the {focus} in the {process} at {company}. What are the {focus} for specific steps that you identified?"
+        #
+        # #option number 3
+        # self.state.specific_question = f"Can you find the {focus} in the {process} process at {company}. What are {focus} that you identified?"
+
+    @listen(introduction_agent)
     def PM_agent(self):
-        PM_agent()
+        approach = PM_agent(self.state.filename, self.state.specific_question)
+        self.state.chosen_approach = approach
 
     @listen(PM_agent)
     async def DK_company_agent(self):
-        await DK_agent_company()
+        await DK_agent_company(self.state.company, self.state.focus,self.state.process)
 
     @listen(DK_company_agent)
     async def DK_process_agent(self):
-        await DK_agent_process()
+        await DK_agent_process(self.state.company, self.state.focus,self.state.process)
 
     @listen(DK_process_agent)
     def Writing(self):
-        WriterAgent()
+        WriterAgent(self.state.specific_question)
 
 
 async def kickoff():
-    final_flow = ResearchCrewFlow(inputs={"product": "AI-powered chatbots"})
-    final_flow.plot("PoemFlowPlot")
+    final_flow = ResearchCrewFlow()
     await final_flow.kickoff_async()
 
 
