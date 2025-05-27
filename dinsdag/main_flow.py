@@ -1,11 +1,11 @@
 from crewai.flow.flow import Flow, listen, start
 from pydantic import BaseModel
 
-from Introduction_agent import introduction_agent
-from PM_agent import PM_agent
-from DK_agent_company import DK_agent_company
-from DK_agent_process import DK_agent_process
-from WriterAgent import WriterAgent
+from dinsdag.Agents.Introduction_agent import introduction_agent
+from dinsdag.Agents.PM_agent import PM_agent
+from dinsdag.Agents.DK_agent_company import DK_agent_company
+from dinsdag.Agents.DK_agent_process import DK_agent_process
+from dinsdag.Agents.WriterAgent import WriterAgent
 import asyncio
 
 

@@ -1,5 +1,5 @@
-from event_log_actions import append_to_event_log
-from event_log_actions import storing_results
+from dinsdag.Functions_for_agents.event_log_actions import append_to_event_log
+from dinsdag.Functions_for_agents.event_log_actions import storing_results
 def introduction_agent():
     focus = str(input("What would you like the focus of the question to be? audit risks, sustainability risks, "
                       "cyber security risks, financial risks, bottlenecks and inefficiencies. Type it out literally. "))

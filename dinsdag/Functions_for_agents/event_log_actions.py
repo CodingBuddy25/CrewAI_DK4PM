@@ -20,7 +20,7 @@ def storing_results(directory_name,report):
 def append_to_event_log(agent_name):
     """For a human observer to see back the flow process"""
     current_time = datetime.now()
-    event_log = open("event_log_human_readable.txt", "w")
+    event_log = open("../event_log_human_readable.txt", "w")
     to_write = f"""\n -{agent_name}: {current_time}"""
     event_log.write(to_write)
     event_log.close()

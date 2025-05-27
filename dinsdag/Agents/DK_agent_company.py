@@ -1,7 +1,7 @@
 
 from gpt_researcher import GPTResearcher
-from event_log_actions import storing_results
-from event_log_actions import append_to_event_log
+from dinsdag.Functions_for_agents.event_log_actions import storing_results
+from dinsdag.Functions_for_agents.event_log_actions import append_to_event_log
 async def DK_agent_company(company, focus,process):
     """uses GPTresearcher to search the internet
     From documentation https://docs.gptr.dev/docs/gpt-researcher/gptr/pip-package
