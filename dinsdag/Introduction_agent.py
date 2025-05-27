@@ -1,8 +1,5 @@
-from PM_agent_tools import choosing_approach
-from PM_agent_tools import abstraction
-from PM_agent_tools import process_analysis
-from PM_agent_tools import Event_log_readings
-
+from event_log_actions import append_to_event_log
+from event_log_actions import storing_results
 def introduction_agent():
     focus = str(input("What would you like the focus of the question to be? audit risks, sustainability risks, "
                       "cyber security risks, financial risks, bottlenecks and inefficiencies. Type it out literally. "))
@@ -14,4 +11,7 @@ def introduction_agent():
     process = str(input("What is the name of the process that is being analysed in the event lof file? E.g. order to "
                         "cash, purchase to pay, accounts payable"))
     #maybe add a human element here
+    variables = f"focus: {focus}, company: {company}, file: {file}, process: {process}"
+    storing_results("Introduction_agent", variables)
+    append_to_event_log("Introduction agent")
     return company, process, focus, file

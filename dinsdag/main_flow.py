@@ -51,7 +51,7 @@ class ResearchCrewFlow(Flow[FlowState]):
 
     @listen(DK_process_agent)
     def Writing(self):
-        WriterAgent(self.state.specific_question)
+        WriterAgent(self.state.process, self.state.company)
 
 
 async def kickoff():

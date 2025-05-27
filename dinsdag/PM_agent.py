@@ -1,10 +1,8 @@
 from PM_agent_tools import choosing_approach
 from PM_agent_tools import abstraction
 from PM_agent_tools import process_analysis
-from PM_agent_tools import Event_log_readings
 
-
-
+from event_log_actions import append_to_event_log
 
 def PM_agent(file,specific_question):
     flag = False
@@ -13,4 +11,5 @@ def PM_agent(file,specific_question):
 
     abstraction_file = abstraction(file, approach)
     process_analysis(abstraction_file, specific_question, approach)
+    append_to_event_log("Process mining agent")
     return approach

@@ -8,6 +8,8 @@ from CSV_config import CSV_format_AP
 from prompts import choosing_approach_prompt
 from prompts import Process_analysis_prompt
 
+from event_log_actions import storing_results
+
 import sys
 import os
 import pandas as pd
@@ -141,11 +143,6 @@ def process_analysis(abstraction_file, specific_question, approach):
                     - Cause: The frequency of "Order Rejected -> Order Completed" is 10551, indicating a significant number of rejected orders that are still being completed.
                     - Root Cause: Inadequate order rejection processes or lack of proper communication between order validation and completion stages."""
 
-    # https://stackoverflow.com/questions/50752844/python-count-number-of-text-file-in-certain-directory
-    files = [file_name for file_name in os.listdir("Intermediate_results/Process_mining_agent/") if
-             (os.path.isfile(f"Intermediate_results/Process_mining_agent/{file_name}") and file_name.endswith('.txt'))]
-    number_files = len(files)
-    print(number_files, "are the number of files in the directory")
-    output_file = open(f"Intermediate_results/Process_mining_agent/output_{number_files}.txt", "w")
-    output_file.write(resp)
-    output_file.close()
+
+    storing_results("Process_mining_agent", resp)
+

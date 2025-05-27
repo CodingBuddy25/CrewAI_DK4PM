@@ -31,7 +31,7 @@ choosing_approach_prompt ="""
      responses: "DFG", "Temporal Profile" or "Variants"
     """
 
-Process_analysis_prompt = f"""
+Process_analysis_prompt = """
         You are a business process consultant, 
         specialized in analyzing processes and the components of processes. 
         The provided input will be a {model} model and your task is to 
@@ -49,33 +49,25 @@ Process_analysis_prompt = f"""
         """
 
 #rewrite the report prompt!!Omg dat dit nog kon is heel gek.
-report_prompt = """
-For the following task, work in a structured and step by step way:
-You are an business process expert, tasked with explaining process inefficiencies.
-First the found process inefficiencies and then three research reports will be presented to you, your task is to create one centralized and structured report from these reports. 
-The three reports explain the potential causes for the three inefficiencies (one report per inefficiency), the reports are in the same order as the process inefficiencies (first inefficiency is explained by the first report)
-Use the following steps to complete the task:
-(1) Take the first research report
-(2) Remove the introduction and conclusion of the report. 
-(3) Add this report to the 'final report' 
-(4) Start again at step 1 until you have processed all 3 provided reports.
-(5) Structure the final report: create a structured list of the 3 inefficiencies, their potential causes, and the references that are the source of the information.
+report_prompt = """Review the contents from both researches and the PM diagnostic task and weave them together into a coherent report of at least 1500 words which combines the {process} with
+    the {company} with the steps from the result of the PM_agent analysis / PM_diagnostic task.
+    You may leave out information that seems irrelevant. Provide links for references.     Use at least 20 relevant references in the paper (if possible) and at most 40 references.
 
-The final report should be a structured list of the ineffiencies and their respective potential causes.
-Some demands for the final report:
-1. Try to use the most specific causes from the list! Not general terms like 'inefficient processes'. Ideally the causes that you list are not easily applicable to other processes or ineffiencies.
-2. Try to avoid duplicate causes, even for different inefficiencies try to use unique causes from the list (unless it is necessary). 
-3. Mention the frequency and performance of process inefficiency. 
-4. Try to mention multiple causes for each process inefficiency. 
-5. Include the reference for each ineffiency that you mention
-6. Do NOT shorten the explanations that come from the input reports, I want to have long explanations
+    You have much experience in writing reports. You can combine knowledge and weave them into a well-analysed report and it is extremely important that every paragraph links to a
+    process from the PM_agent, reference to the step in the csv file, showed in the manner:  'Send Purchase Order -> Receive Goods' step. You are known for FULLY referencing everything,
+    make whole source link available. You are good at following instructions step by step.
 
-An example of the task:
-The found inefficiencies:
-1. **Queued -> Completed (frequency = 38, performance = 394805.842)
-2. **Completed -> Accepted (frequency = 462, performance = 237730.643)
-3. **Queued -> Accepted (frequency = 10729, performance = 98667.638)
 
-Begin! 
-Create your report with rich details.
-"""
+    You can combine the knowledge and weave them into a well-analysed report
+    and it is extremely important that every paragraph links to a process from
+    the outputs: {skip_analysis} and {skip_flow}, and reference to the particular step that you are talking about
+    using the format 'Send Purchase Order -> Receive Goods'. It is important that
+    in every paragraph you fully reference to at least one source link from the research agents AND to a relevant step from the results of the PM_agent / the PM diagnostic task.
+    Add an overview of all the used references at the bottom of the report in this format:
+    ## References
+
+    - [https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8437773/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8437773/)
+    - [https://www.capgemini.com/wp-content/uploads/2017/07/streamlining-the-order-to-cash-process.pdf](https://www.capgemini.com/wp-content/uploads/2017/07/streamlining-the-order-to-cash-process.pdf)
+    - [https://www.mckinsey.com/capabilities/operations/our-insights/a-practical-approach-to-supply-chain-risk-management](https://www.mckinsey.com/capabilities/operations/our-insights/a-practical-approach-to-supply-chain-risk-management)
+    - [https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/cpg-operations-how-to-win-in-a-rapidly-changing-environment](https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/cpg-operations-how-to-win-in-a-rapidly-changing-environment)
+    """
