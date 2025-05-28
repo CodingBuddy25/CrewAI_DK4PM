@@ -1,9 +1,9 @@
-#PM_diagnostic:
-#  description: >
-#    Use the tools that you have to understand and decompose the process. The order of the tools you should use is: choosing_approach_tool, abstraction_tool and then process_analysis_tool.  For the choosing_approach, if the output is not close to "DFG" or "Temporal Profile" or "Variants" then run it again. For the abstraction tool, the first input is {filename} and the second is what the choosing_approach had as output. Use the writing_file_tool and save the response.
-#  expected_output: >
-#    A detailed description (with examples) of the most important areas in the event log. They can be bottlenecks or really crucial/large events in the event log.
-#  agent: PM_agent
+PM_diagnostic:
+  description: >
+    Use the tools that you have to understand and decompose the process. The order of the tools you should use is: choosing_approach_tool, abstraction_tool and then process_analysis_tool.  For the choosing_approach, if the output is not close to "DFG" or "Temporal Profile" or "Variants" then run it again. For the abstraction tool, the first input is {filename} and the second is what the choosing_approach had as output. Use the writing_file_tool and save the response.
+  expected_output: >
+    A detailed description (with examples) of the most important areas in the event log. They can be bottlenecks or really crucial/large events in the event log.
+  agent: PM_agent
 
 DK_company_search:
   description: >
@@ -26,12 +26,13 @@ writing_task:
     Use the writing_file_tool and save the response.
 
   expected_output: >
-    Formatted as markdown without '```', at least a 1500 word essay. 
+    Formatted as markdown without '```'. 
     You can combine the knowledge and weave them into a well-analysed report 
     and it is extremely important that every paragraph links to a process from 
-    the outputs: {skip_analysis} and {skip_flow}, and reference to the particular step that you are talking about 
-    using the format 'Send Purchase Order -> Receive Goods'. It is important that 
+    the outputs PM_diagnostic and the PM_agent, and reference to the particular step that you are talking about 
+    using the format 'Send Purchase Order -> Receive Goods'. Analyse at least 5 of these steps.  It is important that 
     in every paragraph you fully reference to at least one source link from the research agents AND to a relevant step from the results of the PM_agent / the PM diagnostic task.
+    Have a direct link to the references in every paragraph and also make references at the bottom of the report.
     Add an overview of all the used references at the bottom of the report in this format:
     ## References
 

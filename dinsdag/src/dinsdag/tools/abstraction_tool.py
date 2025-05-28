@@ -41,7 +41,9 @@ class abstraction_tool(BaseTool):
         elif filename == "AP_event_log_26052023.csv":
             used_class = CSV_format_AP
             formatvariable = 'mixed'
-
+        # else:
+        #     used_class = CSV_format_AP
+        #     formatvariable = 'mixed'
         if "csv" in file_path:
             # For CSV file formats paramters for 3 columns have to be set manually here
             df = pd.read_csv(file_path, sep=used_class.sep)
