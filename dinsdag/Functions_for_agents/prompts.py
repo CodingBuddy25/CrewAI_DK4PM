@@ -60,9 +60,9 @@ report_prompt = """Review the contents from both researches and the PM diagnosti
 
     You can combine the knowledge and weave them into a well-analysed report
     and it is extremely important that every paragraph links to a process from
-    the outputs: {skip_analysis} and {skip_flow}, and reference to the particular step that you are talking about
+    the outputs and always reference to the particular step that you are talking about
     using the format 'Send Purchase Order -> Receive Goods'. It is important that
-    in every paragraph you fully reference to at least one source link from the research agents AND to a relevant step from the results of the PM_agent / the PM diagnostic task.
+    in every paragraph you fully reference to at least one source link from the research agents (company information and process information) AND to a relevant process mining step.
     Add an overview of all the used references at the bottom of the report in this format:
     ## References
 
@@ -70,4 +70,6 @@ report_prompt = """Review the contents from both researches and the PM diagnosti
     - [https://www.capgemini.com/wp-content/uploads/2017/07/streamlining-the-order-to-cash-process.pdf](https://www.capgemini.com/wp-content/uploads/2017/07/streamlining-the-order-to-cash-process.pdf)
     - [https://www.mckinsey.com/capabilities/operations/our-insights/a-practical-approach-to-supply-chain-risk-management](https://www.mckinsey.com/capabilities/operations/our-insights/a-practical-approach-to-supply-chain-risk-management)
     - [https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/cpg-operations-how-to-win-in-a-rapidly-changing-environment](https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/cpg-operations-how-to-win-in-a-rapidly-changing-environment)
+    
+    All of the knowledge that you should integrate is written after this. Note that you can distinguish the agents with their titles Process_mining_agent,Company_DK_agent and Process_expert_DK_agent:
     """

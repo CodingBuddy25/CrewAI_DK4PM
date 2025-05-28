@@ -12,7 +12,7 @@ async def DK_agent_process(company, focus,process):
 
     It researches the focus, which is for example bottlenecks and risks.
     """
-    DK_process_prompt = f"You are a process expert. Use the process mining information available to search the internet for useful facts and suggestions that link the {process} process to {company} and {focus}. Try to find at least 20 references."
+    DK_process_prompt = f"You are a process expert. Use the process mining information available to search the internet for useful facts and suggestions that link the {process} process to {company} and {focus}. You must have at least 20 references in the final report, try to make the report as detailed as possible."
     # readings = read_event_log()
     # input = DK_process_prompt + "\n Previous research is:" + readings
     input = DK_process_prompt

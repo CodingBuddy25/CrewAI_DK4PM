@@ -1,14 +1,14 @@
 # from langchain_core.prompts import ChatPromptTemplate
 # from langchain_openai import ChatOpenAI
 
-from CSV_config import CSV_format_O2C
-from CSV_config import CSV_format_P2P
-from CSV_config import CSV_format_AP
+from .CSV_config import CSV_format_O2C
+from .CSV_config import CSV_format_P2P
+from .CSV_config import CSV_format_AP
 
-from prompts import choosing_approach_prompt
-from prompts import Process_analysis_prompt
+from .prompts import choosing_approach_prompt
+from .prompts import Process_analysis_prompt
 
-from event_log_actions import storing_results
+from .event_log_actions import storing_results
 
 import sys
 import os
