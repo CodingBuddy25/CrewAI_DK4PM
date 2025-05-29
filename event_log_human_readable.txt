@@ -5,3 +5,9 @@
  -Domain knowledge agent with company specialization: 2025-05-28 10:25:26.400109
  -Domain knowledge agent with process specialization: 2025-05-28 10:26:28.155491
  -Report writer agent: 2025-05-28 10:38:37.279565
+ -Introduction agent: 2025-05-29 10:33:46.309800
+ -Process mining agent: 2025-05-29 10:34:33.708891
+ -Process mining agent: 2025-05-29 10:35:20.985331
+ -Process mining agent: 2025-05-29 10:36:09.512169
+ -Introduction agent: 2025-05-29 10:39:16.350046
+ -Process mining agent: 2025-05-29 10:40:01.953977
