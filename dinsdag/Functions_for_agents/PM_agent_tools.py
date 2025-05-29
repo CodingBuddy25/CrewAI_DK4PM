@@ -56,7 +56,6 @@ def choosing_approach(specific_question):
     # retrieving reponse from LLM
     openai_key = os.getenv('OPENAI_API_KEY')
     approach = pm4py.llm.openai_query(prompt, api_key=openai_key, openai_model="gpt-4o-mini")
-    approach = "DFG"
     print("CHOSEN APPROACH: ", approach, "_______________________________________________--")
     if approach in ["DFG", "Variants", "Temporal Profile"]:
         flag = True
@@ -73,41 +72,18 @@ def abstraction(filename, approach):
     fileName = os.path.join(workingDirectory, "Event_logs", filename)
     file_read = Event_log_readings(fileName, filename)
 
-    # if approach == "DFG":
-    #     abstraction = pm4py.llm.abstract_dfg(file_read)
-    # elif approach == "Temporal Profile":
-    #     temporal_profile = pm4py.discover_temporal_profile(file_read)
-    #     abstraction = pm4py.llm.abstract_temporal_profile(temporal_profile, include_header=True)
-    # elif approach == "Variants":
-    #     abstraction = pm4py.llm.abstract_variants(file_read)
-    # else:
-    #     print("error: expected DFG, Temporal Profile or Variants. Got: ", approach)
-    abstraction = """Order Confirmation Sent -> Prepare Goods for Shipment ( frequency = 38119  performance = 363528.248 )
-Prepare Goods for Shipment -> Goods Shipped ( frequency = 37663  performance = 161225.308 )
-Customer Credit Check -> Order Approval ( frequency = 35102  performance = 150234.508 )
-Send Invoice -> Payment Received ( frequency = 34168  performance = 199630.362 )
-Goods Shipped -> Send Invoice ( frequency = 32561  performance = 62525.077 )
-Customer Credit Check -> Customer Credit Check ( frequency = 27826  performance = 232651.050 )
-Prepare Goods for Shipment -> Send Invoice ( frequency = 21018  performance = 175118.150 )
-Goods Shipped -> Payment Received ( frequency = 20969  performance = 108023.372 )
-Order Confirmation Sent -> Order Approval ( frequency = 19759  performance = 65798.510 )
-Send Invoice -> Goods Shipped ( frequency = 19411  performance = 103830.620 )
-Order Approval -> Prepare Goods for Shipment ( frequency = 19004  performance = 298758.249 )
-Customer Credit Check -> Order Confirmation Sent ( frequency = 17419  performance = 214266.362 )
-Order Validation -> Order Validation ( frequency = 13913  performance = 232620.000 )
-Order Rejected -> Order Completed ( frequency = 10551  performance = 345600.000 )
-Customer Credit Check -> Order Rejected ( frequency = 10551  performance = 173545.181 )
-Order Validation -> Order Approval ( frequency = 4588  performance = 320696.077 )
-Payment Received -> Goods Shipped ( frequency = 2375  performance = 86400.000 )
-Goods Shipped -> Order Completed ( frequency = 2375  performance = 86400.000 )
-Order Validation -> Order Confirmation Sent ( frequency = 2340  performance = 384000.000 )
-Send Invoice -> Prepare Goods for Shipment ( frequency = 2326  performance = 86400.000 )
-Order Confirmation Sent -> Send Invoice ( frequency = 1571  performance = 345600.000 )
-Prepare Goods for Shipment -> Payment Received ( frequency = 768  performance = 259200.000 )
-Order Approval -> Send Invoice ( frequency = 755  performance = 259200.000 )"""
+    if approach == "DFG":
+        abstraction = pm4py.llm.abstract_dfg(file_read)
+    elif approach == "Temporal Profile":
+        temporal_profile = pm4py.discover_temporal_profile(file_read)
+        abstraction = pm4py.llm.abstract_temporal_profile(temporal_profile, include_header=True)
+    elif approach == "Variants":
+        abstraction = pm4py.llm.abstract_variants(file_read)
+    else:
+        print("error: expected DFG, Temporal Profile or Variants. Got: ", approach)
     return abstraction
 
-def process_analysis(abstraction_file, specific_question, approach):
+def process_analysis(abstraction_file, specific_question, approach,feedback):
     """Creates an analysis of the graph analysis. To run, uncomment the LLM prompt."""
     analyse_model = {"DFG": "structural insights and identifying common paths",
                      "Temporal Profile": "the timing and duration of process activities",
@@ -115,34 +91,9 @@ def process_analysis(abstraction_file, specific_question, approach):
     model_analysis = analyse_model[approach]
     filled_template = Process_analysis_prompt.format(user_prompt=specific_question, model=approach,
                                                      characteristics_model=model_analysis)
-    # prompt = filled_template + abstraction_file
+    prompt = filled_template + abstraction_file + "human feedback is:" + feedback + "it may be true that there is no feedback."
 
-    # resp = pm4py.llm.openai_query(prompt, api_key=os.getenv('OPENAI_API_KEY'), openai_model="gpt-4o")
-    resp = """Based on the DFG abstraction of the order-to-cash process at Procter and Gamble, some potential audit risks and their possible causes include:
-                    1. Duplicate Orders:
-                    - Cause: The frequency of "Order Validation -> Order Validation" is 13913, indicating a potential risk of duplicate orders being validated.
-                    - Root Cause: Lack of system controls to prevent duplicate orders from entering the system.
-
-                    2. Inaccurate Credit Checks:
-                    - Cause: The frequency of "Customer Credit Check -> Customer Credit Check" is 27826, suggesting multiple credit checks being performed on the same customer.
-                    - Root Cause: Inadequate integration between systems leading to repeated credit check requests.
-
-                    3. Delayed Payments:
-                    - Cause: The performance time for "Payment Received -> Goods Shipped" is 86400, indicating a potential delay in payments being processed.
-                    - Root Cause: Inefficient payment processing systems or delays in reconciliation between payment received and goods shipped.
-
-                    4. Manual Order Approvals:
-                    - Cause: The performance time for "Order Validation -> Order Approval" is 320696.077, suggesting a lengthy approval process.
-                    - Root Cause: Manual order approval processes leading to delays in order processing.
-
-                    5. Inaccurate Invoicing:
-                    - Cause: The frequency of "Send Invoice -> Prepare Goods for Shipment" is 2326, indicating potential issues with invoicing being sent before goods are ready for shipment.
-                    - Root Cause: Lack of synchronization between invoicing and shipment preparation processes, leading to incorrect or premature invoices.
-
-                    6. Invalid Orders:
-                    - Cause: The frequency of "Order Rejected -> Order Completed" is 10551, indicating a significant number of rejected orders that are still being completed.
-                    - Root Cause: Inadequate order rejection processes or lack of proper communication between order validation and completion stages."""
-
+    resp = pm4py.llm.openai_query(prompt, api_key=os.getenv('OPENAI_API_KEY'), openai_model="gpt-4o")
 
     storing_results("Process_mining_agent", resp)
 

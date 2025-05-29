@@ -39,9 +39,9 @@ class ResearchCrewFlow(Flow[FlowState]):
         # #option number 3
         # self.state.specific_question = f"Can you find the {focus} in the {process} process at {company}. What are {focus} that you identified?"
 
-    @listen(or_(introduction_agent,"PM_agent"))
+    @listen(or_(introduction_agent,"Return2PM"))
     def PM_agent(self):
-        approach = PM_agent(self.state.filename, self.state.specific_question)
+        approach = PM_agent(self.state.filename, self.state.specific_question,self.state.human_feedback)
         self.state.chosen_approach = approach
 
     @router(PM_agent)
@@ -49,33 +49,25 @@ class ResearchCrewFlow(Flow[FlowState]):
         if self.state.finished:
             return "feedback writing"
         else:
-            return "DK_company_agent"
+            return "Company_search"
 
-    @listen("DK_company_agent")
+    @listen("Company_search")
     async def DK_company_agent(self):
-        await DK_agent_company(self.state.company, self.state.focus, self.state.process)
+        await DK_agent_company(self.state.company, self.state.focus, self.state.process,self.state.human_feedback)
 
     @router(DK_company_agent)
     def DK_company_router(self):
         if self.state.finished:
             return "feedback writing"
         else:
-            return "DK_process_agent"
-    @listen("DK_process_agent")
+            return "Process_search"
+    @listen("Process_search")
     async def DK_process_agent(self):
-        await DK_agent_process(self.state.company, self.state.focus, self.state.process)
-
-
-    # @router(DK_process_agent)
-    # def DK_process_router(self):
-    #     if self.state.finished:
-    #         return "feedback writing"
-    #     else:
-    #         return "feedback writing"
+        await DK_agent_process(self.state.company, self.state.focus, self.state.process,self.state.human_feedback)
 
     @listen(or_(DK_process_agent,"feedback writing"))
     def Writing(self):
-        WriterAgent(self.state.process, self.state.company)
+        WriterAgent(self.state.process, self.state.company,self.state.human_feedback)
 
     # https://github.com/crewAIInc/crewAI-examples/blob/main/lead-score-flow/src/lead_score_flow/main.py
     # https://docs.crewai.com/learn/human-in-the-loop
@@ -102,21 +94,21 @@ class ResearchCrewFlow(Flow[FlowState]):
             )
             self.state.human_feedback = feedback
             print("\nRe-running lead scoring with your feedback...")
-            return "PM_agent"
+            return "Return2PM"
         elif choice == "3":
             feedback = input(
                 "\nPlease provide additional feedback on what you're looking for in candidates:\n"
             )
             self.state.human_feedback = feedback
             print("\nRe-running lead scoring with your feedback...")
-            return "DK_company_agent"
+            return "Company_search"
         elif choice == "4":
             feedback = input(
                 "\nPlease provide additional feedback on what you're looking for in candidates:\n"
             )
             self.state.human_feedback = feedback
             print("\nRe-running lead scoring with your feedback...")
-            return "DK_process_agent"
+            return "Process_search"
         elif choice == "5":
             feedback = input(
                 "\nPlease provide additional feedback on what you're looking for in candidates:\n"

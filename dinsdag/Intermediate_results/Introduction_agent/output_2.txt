@@ -1,1 +1,0 @@
-focus: bottlenecks and inefficiencies, company: Proctor and Gamble (P&G), file: O2C.csv, process: order to cash

@@ -1,1 +1,1 @@
-focus: IT and cyber risks, company: Proctor and Gamble (P&G), file: O2C.csv, process: order to cash
+focus: audit  risks, company: Proctor and Gamble (P&G), file: O2C.csv, process: order to cash
