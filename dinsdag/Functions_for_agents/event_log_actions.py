@@ -11,10 +11,14 @@ def storing_results(directory_name,report):
 
     #writing results to file
     path_to_last_output = f"Intermediate_results/{directory_name}/output_{number_files}.txt"
-    output_file = open(path_to_last_output, "w")
-    output_file.write(report)
-    output_file.close()
-
+    try:
+        output_file = open(path_to_last_output, "w", encoding="utf-8")
+        output_file.write(report)
+        output_file.close()
+    except UnicodeDecodeError:
+        output_file = open(path_to_last_output, "w", encoding="latin1")
+        output_file.write(report)
+        output_file.close()
     #storing the path of the most recent output
 
 def append_to_event_log(agent_name):
@@ -39,7 +43,7 @@ def summary_event_log():
         files = [file_name for file_name in os.listdir(f"Intermediate_results/{directory}/") if
              (os.path.isfile(f"Intermediate_results/{directory}/{file_name}") and file_name.endswith('.txt'))]
         most_recent_output = len(files) -1
-        output_file = open(f"Intermediate_results/{directory}/output_{most_recent_output}.txt", "r")
+        output_file = open(f"Intermediate_results/{directory}/output_{most_recent_output}.txt", "r",encoding="utf-8")
         full_output = output_file.read()
         output_file.close()
         log = open(path, "a")

@@ -1,254 +1,156 @@
-# Audit Risks in the Order-to-Cash Process at Procter & Gamble (P&G): A Process Mining Perspective
+# Linking Travel Expenses Process, Google, and Operational Risks: A Process Mining Perspective
 
 ## Introduction
 
-The order-to-cash (O2C) process is a critical end-to-end business function encompassing all steps from receiving a customer order to collecting payment. For a global enterprise like Procter & Gamble (P&G), which operates in over 70 countries and reported net sales of $82 billion in 2024 ([Procter & Gamble Annual Report 2024](https://www.pginvestor.com/financials/annual-reports/default.aspx)), the O2C process is fundamental to operational efficiency, customer satisfaction, and financial integrity. However, the complexity and scale of P&G’s operations introduce significant audit risks that, if unaddressed, can lead to financial misstatements, regulatory non-compliance, and reputational damage.
-
-This report leverages process mining techniques, particularly the Directly-Follows Graph (DFG) approach, to identify and analyze audit risks in P&G’s O2C process. The analysis is supplemented with domain knowledge, industry best practices, and references to P&G’s own policies and external audit literature.
+In the digital age, organizations are increasingly leveraging process mining to optimize business processes, manage risks, and drive operational efficiency. The travel expenses process, a critical component of financial operations, is particularly susceptible to operational risks due to its complexity, volume, and regulatory requirements. With the advent of advanced automation and analytics platformsâ€”such as those offered by Google Cloud and other leading technology providersâ€”companies now have unprecedented opportunities to mitigate these risks. This report explores how process mining can be applied to the travel expenses process, the operational risks involved, and the specific role of Google technologies in this context. The analysis is grounded in recent, reliable sources and highlights best practices, challenges, and actionable recommendations.
 
 ---
 
-## 1. Overview of the Order-to-Cash Process at P&G
+## 1. The Travel Expenses Process: Complexity and Risk
 
-The O2C process at P&G typically includes the following steps:
+### 1.1. Overview
 
-1. **Order Entry and Validation**
-2. **Credit Approval**
-3. **Order Fulfillment (Picking, Packing, Shipping)**
-4. **Invoicing**
-5. **Revenue Recognition**
-6. **Payment Collection**
-7. **Dispute and Deductions Management**
+The travel expenses process typically encompasses pre-trip approvals, booking, expense reporting, auditing, reimbursement, and analytics. This multi-stage workflow involves numerous stakeholders, including employees, finance teams, auditors, and external vendors. The process is data-intensive, often requiring integration with HR, ERP, and payment systems ([ProcessMaker, 2024](https://www.processmaker.com/blog/process-mining-for-financial-operations-what-why-and-how/)).
 
-Each step involves multiple systems, stakeholders, and controls, making the process susceptible to various audit risks.
+### 1.2. Common Operational Risks
 
----
+Operational risks in the travel expenses process include:
 
-## 2. Audit Risks in the O2C Process
-
-### 2.1 Segregation of Duties (SoD)
-
-**Risk Description:**  
-A lack of segregation between critical functions (e.g., order entry and approval, shipping and invoicing, or payment collection and reconciliation) increases the risk of fraud or error. For example, if the same employee can both create and approve orders, or ship goods and issue invoices, unauthorized transactions may go undetected ([KPMG, 2023](https://advisory.kpmg.us/articles/2023/segregation-duties.html)).
-
-**P&G Context:**  
-P&G’s internal controls emphasize SoD, but process mining has revealed instances where SoD violations occur, especially in smaller subsidiaries or during system migrations ([P&G Policies & Practices](https://www.pg.com/about-pg/corporate-governance/policies-practices/)).
-
-**Mitigation:**  
-Automated controls and regular SoD audits are essential. Process mining tools can flag SoD violations in real time ([ReWOO_agent_for_PM](https://github.com/maxvogt12/ReWOO_agent_for_PM)).
+- **Fraud and Non-compliance**: Manual entry errors, duplicate submissions, and policy violations.
+- **Process Inefficiency**: Delays in approvals, reimbursement bottlenecks, and excessive manual intervention.
+- **Data Integrity Issues**: Inaccurate or incomplete data due to lack of automation.
+- **Audit Readiness**: Difficulty in producing audit trails and compliance documentation.
+- **Supplier Risk**: Exposure to third-party/vendor risks during bookings and reimbursements ([ServiceNow, 2025](https://www.servicenow.com/community/process-mining-blog/eliminating-blind-spots-process-mining-for-end-to-end-source-to/ba-p/3179030)).
 
 ---
 
-### 2.2 Unauthorized Order Creation and Approval
+## 2. Process Mining: A Solution for Risk Identification and Mitigation
 
-**Risk Description:**  
-Unauthorized or fraudulent orders can result in financial loss and inventory discrepancies. This risk is heightened if order approval workflows are bypassed or if user access controls are weak ([Deloitte, 2024](https://www2.deloitte.com/global/en/pages/risk/articles/internal-controls-over-financial-reporting.html)).
+### 2.1. What is Process Mining?
 
-**P&G Context:**  
-P&G’s ERP systems require multi-level approvals for large orders, but exceptions and manual overrides have been identified during audits ([P&G Third-Party Risk Management](https://www.pg.com/about-pg/corporate-governance/third-party-risk-management/)).
+Process mining is a data-driven technique that extracts, analyzes, and visualizes event logs from enterprise systems to provide an x-ray of actual business processes. It supports process discovery, conformance checking, performance analysis, and predictive analytics ([ProcessMaker, 2024](https://www.processmaker.com/blog/process-mining-for-financial-operations-what-why-and-how/); [Mindzie, 2021](https://mindzie.com/2021/06/30/identifying-process-risks-using-process-mining/)).
 
-**Mitigation:**  
-Strengthen access controls, enforce workflow approvals, and monitor override activities.
+### 2.2. Application to Travel Expenses
 
----
+Process mining can:
 
-### 2.3 Revenue Recognition Timing
+- **Automatically map the end-to-end travel expense process**, revealing deviations from policy and inefficiencies.
+- **Detect abnormal patterns** such as duplicate claims, late submissions, or suspicious approvals.
+- **Quantify process performance** using KPIs (e.g., average reimbursement time, compliance rates).
+- **Provide audit-ready documentation** by maintaining a digital trail of all transactions ([Darwinbox, 2024](https://blog.darwinbox.com/travel-and-expense-process); [Emburse, 2024](https://www.emburse.com/resources/12-travel-and-expense-management-best-practices)).
 
-**Risk Description:**  
-Improper timing of revenue recognition can lead to material misstatements in financial statements. This is a common audit risk, especially with complex shipping terms or consignment sales ([EY, 2023](https://www.ey.com/en_gl/assurance/how-to-address-revenue-recognition-risks)).
+### 2.3. Predictive and Preventive Capabilities
 
-**P&G Context:**  
-P&G adheres to IFRS 15, but process mining has flagged delays between shipping and invoicing, which could impact revenue recognition ([P&G Annual Report 2024](https://www.pginvestor.com/financials/annual-reports/default.aspx)).
-
-**Mitigation:**  
-Align process steps with revenue recognition policies and automate reconciliations.
+Modern process mining tools offer predictive analytics to forecast risks, such as the likelihood of a claim being fraudulent or delayed, enabling timely interventions ([AIMultiple, 2025](https://research.aimultiple.com/process-risk/)).
 
 ---
 
-### 2.4 Inadequate Verification of Goods Received
+## 3. Google and the Digitalization of Travel Expense Management
 
-**Risk Description:**  
-Failure to verify that goods received match the purchase order (in terms of quantity, quality, and specifications) can lead to inventory shrinkage, financial losses, and compliance issues ([PwC, 2024](https://www.pwc.com/gx/en/services/audit-assurance/corporate-reporting/audit-quality.html)).
+### 3.1. Google Cloud and Expense Automation
 
-**P&G Context:**  
-P&G’s policy mandates three-way matching (PO, goods receipt, invoice), but process mining has identified exceptions, particularly in high-volume periods ([P&G Product Safety & Compliance](https://www.pg.com/about-pg/corporate-governance/product-safety-compliance/)).
+Google Cloud provides robust infrastructure and APIs (e.g., Maps, Geocoding, OCR) that power leading expense management platforms like Expensya ([Google Cloud, 2024](https://cloud.google.com/customers/expensya)). These platforms automate data capture, validation, and reporting, reducing manual errors and accelerating processing times.
 
-**Mitigation:**  
-Enforce three-way matching and use process mining to identify exceptions.
+### 3.2. Integration with Process Mining
 
----
+By leveraging Google Cloudâ€™s data processing and AI capabilities, organizations can:
 
-### 2.5 Duplicate Invoices and Payments
+- **Aggregate and analyze large volumes of travel expense data** from multiple sources in real time.
+- **Apply machine learning models** to detect anomalies, predict risks, and optimize approval workflows.
+- **Utilize Google Maps APIs** to validate travel routes and expenses, reducing fraudulent claims ([Google Cloud, 2024](https://cloud.google.com/customers/expensya)).
 
-**Risk Description:**  
-Duplicate invoices or payments can result from system errors or manual processing, leading to financial leakage ([ACFE, 2024](https://www.acfe.com/fraud-resources/fraud-examiner-archives/2024/may/duplicate-payments.aspx)).
+### 3.3. Case Study: Expensya
 
-**P&G Context:**  
-While automated controls exist, process mining has uncovered duplicate transactions, often linked to manual adjustments or system integrations.
-
-**Mitigation:**  
-Implement duplicate detection algorithms and conduct periodic audits.
+Expensya, built on Google Cloud, exemplifies how automation and integration can transform travel expense management. The platform covers the entire expense lifecycle, from payment to reimbursement, and uses AI to extract and validate data from receipts, minimizing errors and fraud ([Google Cloud, 2024](https://cloud.google.com/customers/expensya)).
 
 ---
 
-### 2.6 Credit Risk Management
+## 4. Best Practices for Managing Operational Risks in Travel Expenses
 
-**Risk Description:**  
-Inadequate credit checks can result in sales to customers with poor creditworthiness, increasing the risk of bad debts ([Moody’s Analytics, 2023](https://www.moodysanalytics.com/articles/2023/credit-risk-management-best-practices)).
+### 4.1. Automation and Digitalization
 
-**P&G Context:**  
-P&G uses advanced credit scoring, but process mining has shown that credit overrides are sometimes granted without proper documentation.
+- **Automate approvals and reporting** using T&E management software with AI and OCR capabilities ([Darwinbox, 2024](https://blog.darwinbox.com/travel-and-expense-process)).
+- **Integrate with existing HR and accounting systems** for seamless data flow and reduced manual intervention.
 
-**Mitigation:**  
-Automate credit checks and require justification for overrides.
+### 4.2. Analytics and Continuous Monitoring
 
----
+- **Implement real-time analytics** to monitor spending patterns, compliance, and process bottlenecks ([Emburse, 2024](https://www.emburse.com/resources/12-travel-and-expense-management-best-practices)).
+- **Use dashboards and BI reports** to identify cost-saving opportunities and potential risks.
 
-### 2.7 Data Integrity and System Integration Risks
+### 4.3. Policy Standardization and Compliance
 
-**Risk Description:**  
-Data inconsistencies between ERP, CRM, and legacy systems can lead to reconciliation issues and audit findings ([Gartner, 2024](https://www.gartner.com/en/information-technology/glossary/data-integrity)).
+- **Standardize travel and expense policies** across the organization to minimize process variation and compliance risks ([AIMultiple, 2025](https://research.aimultiple.com/process-risk/)).
+- **Conduct regular conformance checks** using process mining tools to ensure adherence to policies and regulations.
 
-**P&G Context:**  
-P&G’s ongoing digital transformation involves integrating multiple systems, increasing the risk of data mismatches.
+### 4.4. Audit Readiness
 
-**Mitigation:**  
-Use process mining to reconcile data flows and flag anomalies.
+- **Maintain a digital audit trail** of all expense transactions and approvals, facilitating quick and accurate responses to audits ([ServiceNow, 2025](https://www.servicenow.com/community/process-mining-blog/eliminating-blind-spots-process-mining-for-end-to-end-source-to/ba-p/3179030)).
 
 ---
 
-### 2.8 Manual Adjustments and Overrides
+## 5. Process Mining in Action: Key Metrics and Outcomes
 
-**Risk Description:**  
-Manual interventions in automated processes can bypass controls and introduce errors or fraud ([ISACA, 2023](https://www.isaca.org/resources/news-and-trends/newsletters/atisaca/2023/volume-49/risks-of-manual-override-in-automated-systems)).
+### 5.1. Performance Metrics
 
-**P&G Context:**  
-Process mining has detected frequent manual adjustments in the invoicing and payment collection steps.
+Process mining tools enable tracking of key metrics such as:
 
-**Mitigation:**  
-Limit manual overrides and require dual authorization.
+| Metric                        | Description                                            | Impact on Risk Management                 |
+|-------------------------------|--------------------------------------------------------|-------------------------------------------|
+| Average Reimbursement Time    | Time taken from claim submission to payment            | Delays may indicate process bottlenecks   |
+| Compliance Rate               | Percentage of claims adhering to policy                | Low rates signal compliance risk          |
+| Duplicate Claim Detection     | Number of duplicate or suspicious claims identified    | High numbers indicate fraud risk          |
+| Approval Cycle Time           | Time taken for each approval stage                     | Long cycles can cause operational delays  |
 
----
+([ProcessMaker, 2024](https://www.processmaker.com/blog/process-mining-for-financial-operations-what-why-and-how/); [AIMultiple, 2025](https://research.aimultiple.com/process-risk/))
 
-### 2.9 Third-Party and Vendor Risks
+### 5.2. Quantifiable Benefits
 
-**Risk Description:**  
-Reliance on third-party logistics and suppliers introduces risks related to service level, compliance, and fraud ([Protiviti, 2024](https://www.protiviti.com/US-en/insights/third-party-risk-management-survey)).
-
-**P&G Context:**  
-P&G’s global supply chain involves thousands of vendors. Process mining has highlighted delays and discrepancies in third-party transactions.
-
-**Mitigation:**  
-Strengthen third-party risk assessments and monitor vendor performance.
+- **Reduction in manual processing time** by up to 70% through automation ([Emburse, 2024](https://www.emburse.com/resources/12-travel-and-expense-management-best-practices)).
+- **Decrease in fraudulent claims** by leveraging AI-based anomaly detection ([Darwinbox, 2024](https://blog.darwinbox.com/travel-and-expense-process)).
+- **Improved compliance rates** and audit readiness, reducing the risk of regulatory penalties.
 
 ---
 
-### 2.10 Compliance with Regulatory Requirements
+## 6. Challenges and Limitations
 
-**Risk Description:**  
-Non-compliance with regulations such as SOX, GDPR, and local tax laws can result in fines and reputational damage ([SEC, 2023](https://www.sec.gov/spotlight/sarbanes-oxley.htm)).
+### 6.1. Data Quality and Integration
 
-**P&G Context:**  
-P&G operates in highly regulated markets and must ensure that its O2C process complies with all relevant laws.
+The effectiveness of process mining depends on the quality and completeness of event log data. Incomplete or inaccurate data can lead to misleading insights ([ProcessMaker, 2024](https://www.processmaker.com/blog/process-mining-for-financial-operations-what-why-and-how/)).
 
-**Mitigation:**  
-Automate compliance checks and use process mining to monitor for violations.
+### 6.2. Change Management
 
----
+Implementing process mining and automation requires stakeholder buy-in and ongoing training to ensure adoption and sustained benefits ([ProcessMaker, 2024](https://www.processmaker.com/blog/process-mining-for-financial-operations-what-why-and-how/)).
 
-## 3. Quantitative Insights from Process Mining
+### 6.3. Limitations in Root Cause Analysis
 
-Process mining at P&G has provided the following insights:
-
-| Audit Risk Category           | Frequency of Occurrence (%) | Financial Impact (USD, est.) | Notable Patterns Detected                |
-|------------------------------|----------------------------|------------------------------|------------------------------------------|
-| SoD Violations               | 1.2                        | $3.5M                        | Small subsidiaries, system migrations    |
-| Unauthorized Orders          | 0.8                        | $2.1M                        | Manual overrides, urgent orders          |
-| Revenue Recognition Delays   | 2.5                        | $5.9M                        | Shipping-invoice lag                     |
-| Duplicate Payments           | 0.3                        | $0.7M                        | Manual adjustments, system integration   |
-| Credit Override Issues       | 0.5                        | $1.2M                        | Lack of documentation                    |
-| Data Integration Errors      | 1.0                        | $2.8M                        | ERP-CRM mismatches                       |
-| Manual Adjustments           | 1.8                        | $4.3M                        | Invoicing, payment collection            |
-| Third-Party Delays           | 2.2                        | $3.0M                        | Logistics, supplier onboarding           |
-
-*Source: Internal P&G process mining reports, 2024 ([ReWOO_agent_for_PM](https://github.com/maxvogt12/ReWOO_agent_for_PM)).*
+While process mining excels at identifying where problems occur, it may not always reveal the underlying causes, necessitating further investigation ([ProcessMaker, 2024](https://www.processmaker.com/blog/process-mining-for-financial-operations-what-why-and-how/)).
 
 ---
 
-## 4. Industry Best Practices and P&G’s Approach
+## 7. Recommendations
 
-### 4.1 Automation and Real-Time Monitoring
+Based on the analysis, the following recommendations are proposed for organizations seeking to optimize their travel expenses process and mitigate operational risks:
 
-Leading companies, including P&G, are investing in automation and real-time monitoring to reduce audit risks. Robotic Process Automation (RPA) and AI-driven process mining can detect anomalies and enforce controls ([McKinsey, 2024](https://www.mckinsey.com/capabilities/operations/our-insights/automation-in-finance)).
-
-### 4.2 Continuous Auditing
-
-Continuous auditing, enabled by process mining, allows for the ongoing assessment of controls and transactions, rather than periodic reviews ([Deloitte, 2024](https://www2.deloitte.com/global/en/pages/audit/articles/continuous-auditing.html)).
-
-### 4.3 Cross-Functional Collaboration
-
-Audit risks often span multiple departments. P&G encourages collaboration between finance, IT, and operations to address risks holistically ([P&G Corporate Governance](https://www.pg.com/about-pg/corporate-governance/)).
+1. **Adopt a cloud-based, automated expense management platform** that integrates with Google Cloud and leverages AI for data extraction and validation.
+2. **Implement process mining tools** to continuously monitor, analyze, and improve the travel expenses workflow.
+3. **Standardize policies and automate conformance checks** to ensure compliance and reduce manual errors.
+4. **Invest in real-time analytics and dashboards** for proactive risk identification and management.
+5. **Foster a culture of continuous improvement** by regularly reviewing process performance and incorporating stakeholder feedback.
 
 ---
 
-## 5. Recommendations
+## 8. Conclusion
 
-1. **Expand Process Mining Coverage:**  
-   Deploy process mining across all O2C subprocesses and geographies to ensure comprehensive risk detection.
-
-2. **Enhance SoD Controls:**  
-   Automate SoD checks and integrate with HR systems to promptly update user roles.
-
-3. **Strengthen Access and Approval Workflows:**  
-   Use multi-factor authentication and enforce strict approval hierarchies.
-
-4. **Automate Three-Way Matching:**  
-   Integrate PO, goods receipt, and invoice data to prevent mismatches.
-
-5. **Implement Duplicate Detection:**  
-   Use AI algorithms to flag potential duplicate invoices and payments in real time.
-
-6. **Monitor Manual Adjustments:**  
-   Require dual authorization and justification for all manual interventions.
-
-7. **Improve Third-Party Risk Management:**  
-   Conduct regular vendor audits and monitor third-party performance using process mining dashboards.
-
-8. **Ensure Regulatory Compliance:**  
-   Automate compliance checks and maintain an up-to-date regulatory requirements database.
-
----
-
-## 6. Conclusion
-
-The order-to-cash process at Procter & Gamble is robust but not immune to audit risks. Process mining, particularly using advanced LLM-based agents as demonstrated in the ReWOO_agent_for_PM proof-of-concept, provides actionable insights into process inefficiencies and control weaknesses. By addressing the identified risks with targeted controls, automation, and continuous monitoring, P&G can further strengthen its financial integrity and operational excellence.
+The intersection of process mining, travel expenses management, and Googleâ€™s digital ecosystem presents a powerful opportunity for organizations to enhance operational efficiency, reduce risks, and ensure compliance. By embracing automation, analytics, and continuous monitoring, companies can transform their travel expenses process from a source of risk to a strategic asset. The evidence from recent case studies and industry best practices underscores the tangible benefits of this approach, including faster processing times, reduced fraud, and improved audit readiness. As operational risks continue to evolve, organizations that leverage process mining and advanced technologies will be best positioned to thrive in an increasingly complex business environment.
 
 ---
 
 ## References
 
-- ACFE. (2024, May). Duplicate Payments: How to Detect and Prevent Them. Association of Certified Fraud Examiners. [https://www.acfe.com/fraud-resources/fraud-examiner-archives/2024/may/duplicate-payments.aspx](https://www.acfe.com/fraud-resources/fraud-examiner-archives/2024/may/duplicate-payments.aspx)
-- Deloitte. (2024). Internal Controls Over Financial Reporting. Deloitte. [https://www2.deloitte.com/global/en/pages/risk/articles/internal-controls-over-financial-reporting.html](https://www2.deloitte.com/global/en/pages/risk/articles/internal-controls-over-financial-reporting.html)
-- Deloitte. (2024). Continuous Auditing: Transforming Internal Audit. Deloitte. [https://www2.deloitte.com/global/en/pages/audit/articles/continuous-auditing.html](https://www2.deloitte.com/global/en/pages/audit/articles/continuous-auditing.html)
-- EY. (2023). How to Address Revenue Recognition Risks. EY. [https://www.ey.com/en_gl/assurance/how-to-address-revenue-recognition-risks](https://www.ey.com/en_gl/assurance/how-to-address-revenue-recognition-risks)
-- Gartner. (2024). Data Integrity. Gartner. [https://www.gartner.com/en/information-technology/glossary/data-integrity](https://www.gartner.com/en/information-technology/glossary/data-integrity)
-- ISACA. (2023). Risks of Manual Override in Automated Systems. ISACA. [https://www.isaca.org/resources/news-and-trends/newsletters/atisaca/2023/volume-49/risks-of-manual-override-in-automated-systems](https://www.isaca.org/resources/news-and-trends/newsletters/atisaca/2023/volume-49/risks-of-manual-override-in-automated-systems)
-- KPMG. (2023). Segregation of Duties: Best Practices. KPMG. [https://advisory.kpmg.us/articles/2023/segregation-duties.html](https://advisory.kpmg.us/articles/2023/segregation-duties.html)
-- McKinsey. (2024). Automation in Finance: The Next Frontier. McKinsey & Company. [https://www.mckinsey.com/capabilities/operations/our-insights/automation-in-finance](https://www.mckinsey.com/capabilities/operations/our-insights/automation-in-finance)
-- Moody’s Analytics. (2023). Credit Risk Management Best Practices. Moody’s Analytics. [https://www.moodysanalytics.com/articles/2023/credit-risk-management-best-practices](https://www.moodysanalytics.com/articles/2023/credit-risk-management-best-practices)
-- Protiviti. (2024). Third-Party Risk Management Survey. Protiviti. [https://www.protiviti.com/US-en/insights/third-party-risk-management-survey](https://www.protiviti.com/US-en/insights/third-party-risk-management-survey)
-- PwC. (2024). Audit Quality: Corporate Reporting. PwC. [https://www.pwc.com/gx/en/services/audit-assurance/corporate-reporting/audit-quality.html](https://www.pwc.com/gx/en/services/audit-assurance/corporate-reporting/audit-quality.html)
-- SEC. (2023). Spotlight on Sarbanes-Oxley Act of 2002. U.S. Securities and Exchange Commission. [https://www.sec.gov/spotlight/sarbanes-oxley.htm](https://www.sec.gov/spotlight/sarbanes-oxley.htm)
-- Procter & Gamble. (2024). Annual Report 2024. [https://www.pginvestor.com/financials/annual-reports/default.aspx](https://www.pginvestor.com/financials/annual-reports/default.aspx)
-- Procter & Gamble. (2024). Policies & Practices. [https://www.pg.com/about-pg/corporate-governance/policies-practices/](https://www.pg.com/about-pg/corporate-governance/policies-practices/)
-- Procter & Gamble. (2024). Third-Party Risk Management. [https://www.pg.com/about-pg/corporate-governance/third-party-risk-management/](https://www.pg.com/about-pg/corporate-governance/third-party-risk-management/)
-- Procter & Gamble. (2024). Product Safety & Compliance. [https://www.pg.com/about-pg/corporate-governance/product-safety-compliance/](https://www.pg.com/about-pg/corporate-governance/product-safety-compliance/)
-- Procter & Gamble. (2024). Corporate Governance. [https://www.pg.com/about-pg/corporate-governance/](https://www.pg.com/about-pg/corporate-governance/)
-- Max Vogt, Peter van der Putten, & Hajo A. Reijers. (2024). Providing domain knowledge for process mining with ReWOO-based agents. GENAI4PM 2024, ICPM 2024. [https://github.com/maxvogt12/ReWOO_agent_for_PM](https://github.com/maxvogt12/ReWOO_agent_for_PM)
-- ReWOO_agent_for_PM. (2024). Repository for LLM-based agent for process mining. [https://github.com/maxvogt12/ReWOO_agent_for_PM](https://github.com/maxvogt12/ReWOO_agent_for_PM)
-- P&G. (2024). About P&G. [https://www.pg.com/about-pg/](https://www.pg.com/about-pg/)
-- Surfdrive. (2024). Full thesis on LLMs and process mining. [https://surfdrive.surf.nl/files/index.php/s/USZ976hnMr8XYSh](https://surfdrive.surf.nl/files/index.php/s/USZ976hnMr8XYSh)
-
----
-
-*This report provides a comprehensive, evidence-based analysis of audit risks in P&G’s order-to-cash process, leveraging both process mining insights and authoritative industry sources as of May 2025.*
+- AIMultiple. (2025). Top 8 Real-Life Process Risk Types & 7 Best Practices ['25]. AIMultiple. [https://research.aimultiple.com/process-risk/](https://research.aimultiple.com/process-risk/)
+- Darwinbox. (2024). Travel and Expenses Process: Strategy, Steps & Best Practices. Darwinbox. [https://blog.darwinbox.com/travel-and-expense-process](https://blog.darwinbox.com/travel-and-expense-process)
+- Emburse. (2024). 12 travel and expense management best practices. Emburse. [https://www.emburse.com/resources/12-travel-and-expense-management-best-practices](https://www.emburse.com/resources/12-travel-and-expense-management-best-practices)
+- Google Cloud. (2024). Expensya Case Study | Google Cloud. Google Cloud. [https://cloud.google.com/customers/expensya](https://cloud.google.com/customers/expensya)
+- Mindzie. (2021). Identifying process risks using process mining. Mindzie. [https://mindzie.com/2021/06/30/identifying-process-risks-using-process-mining/](https://mindzie.com/2021/06/30/identifying-process-risks-using-process-mining/)
+- ProcessMaker. (2024). Process mining for financial operations - what, why and how. ProcessMaker. [https://www.processmaker.com/blog/process-mining-for-financial-operations-what-why-and-how/](https://www.processmaker.com/blog/process-mining-for-financial-operations-what-why-and-how/)
+- ServiceNow. (2025). Eliminating Blind Spots: Process Mining for End-to-End Source-to-Pay & Third-Party Risk Insights. ServiceNow. [https://www.servicenow.com/community/process-mining-blog/eliminating-blind-spots-process-mining-for-end-to-end-source-to/ba-p/3179030](https://www.servicenow.com/community/process-mining-blog/eliminating-blind-spots-process-mining-for-end-to-end-source-to/ba-p/3179030)

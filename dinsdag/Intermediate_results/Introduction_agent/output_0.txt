@@ -1,1 +1,1 @@
-focus: audit  risks, company: Proctor and Gamble (P&G), file: O2C.csv, process: order to cash
+focus: environmental risks, company: Walmart, file: purchase_to_pay_event_log.csv, process: purchase to pay

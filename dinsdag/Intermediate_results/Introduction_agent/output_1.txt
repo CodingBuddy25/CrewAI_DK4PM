@@ -1,0 +1,1 @@
+focus: process inefficiencies, company: General Electric (GE), file: AP_event_log_26052023.csv, process: accounts payable

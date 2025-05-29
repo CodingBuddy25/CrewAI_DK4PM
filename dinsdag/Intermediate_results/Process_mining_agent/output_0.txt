@@ -1,24 +1,23 @@
-Based on the DFG abstraction of the order-to-cash process at Procter and Gamble, some potential audit risks and their possible causes include:
-                    1. Duplicate Orders:
-                    - Cause: The frequency of "Order Validation -> Order Validation" is 13913, indicating a potential risk of duplicate orders being validated.
-                    - Root Cause: Lack of system controls to prevent duplicate orders from entering the system.
+Based on the analysis of the provided process flow, here are the important steps and potential operational risks in Google's travel expenses process:
 
-                    2. Inaccurate Credit Checks:
-                    - Cause: The frequency of "Customer Credit Check -> Customer Credit Check" is 27826, suggesting multiple credit checks being performed on the same customer.
-                    - Root Cause: Inadequate integration between systems leading to repeated credit check requests.
+1. **Permit Final Approval by Supervisor -> Request for Payment Submitted by Employee**
+   - **Explanation:** This step has high performance time (2129693.032) suggesting potential bottlenecks or inefficiencies in the final approval process by supervisors, which can delay subsequent expense claims.
+   - **Potential Risk:** Delay in the approval process could lead to employee dissatisfaction and inefficiency in expense processing.
 
-                    3. Delayed Payments:
-                    - Cause: The performance time for "Payment Received -> Goods Shipped" is 86400, indicating a potential delay in payments being processed.
-                    - Root Cause: Inefficient payment processing systems or delays in reconciliation between payment received and goods shipped.
+2. **Permit Final Approved by Director -> Request for Payment Submitted by Employee**
+   - **Explanation:** With an extremely high performance time (3545389.425), this step represents a significant delay risk, indicating a cumbersome process from director-level decisions to employee submission.
+   - **Potential Risk:** Extended wait times for approvals can cause backlogs and affect cash flow management for employees.
 
-                    4. Manual Order Approvals:
-                    - Cause: The performance time for "Order Validation -> Order Approval" is 320696.077, suggesting a lengthy approval process.
-                    - Root Cause: Manual order approval processes leading to delays in order processing.
+3. **Payment Handled -> Permit Rejected by Missing**
+   - **Explanation:** Though less frequent (13 occurrences), this step has the highest performance time (7238248.538), indicating a critical delay when errors or missing information lead to payments being rejected.
+   - **Potential Risk:** Errors or incomplete submissions resulting in rejection can cause substantial time wastage and require reprocessing, adding to the operational overhead.
 
-                    5. Inaccurate Invoicing:
-                    - Cause: The frequency of "Send Invoice -> Prepare Goods for Shipment" is 2326, indicating potential issues with invoicing being sent before goods are ready for shipment.
-                    - Root Cause: Lack of synchronization between invoicing and shipment preparation processes, leading to incorrect or premature invoices.
+4. **Request for Payment Rejected by Administration -> Request for Payment Rejected by Employee**
+   - **Explanation:** The frequent rejection by administration followed by rejection acknowledgment from employees, with a significant performance time (235871.490), indicates possible communication issues or criterion misalignment.
+   - **Potential Risk:** Misalignment or unclear criteria for approvals could lead to repeated rejections, frustrating employees and elongating the approval cycle.
 
-                    6. Invalid Orders:
-                    - Cause: The frequency of "Order Rejected -> Order Completed" is 10551, indicating a significant number of rejected orders that are still being completed.
-                    - Root Cause: Inadequate order rejection processes or lack of proper communication between order validation and completion stages.
+5. **Permit Submitted by Employee -> Permit Final Approved by Supervisor**
+   - **Explanation:** Although having one of the lower performance times (1856.364), this step's significant flow indicates its foundational role. Any inefficiency here will disrupt many subsequent processes.
+   - **Potential Risk:** Inadequate initial permit submission quality could streamline issues across the process, underlining the importance of comprehensive first submission.
+
+These steps highlight potential bottlenecks, misalignment, and inefficiencies that could create operational risks in the travel expenses process at Google. Addressing these areas could improve efficiency and employee satisfaction.

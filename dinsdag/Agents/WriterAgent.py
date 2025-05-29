@@ -24,4 +24,5 @@ def WriterAgent(process,company,feedback):
 
     resp = llm.call(final_input)
     storing_results("Writing_report_agent", resp)
+    print("FINAL RESPONSE:",resp, "\n_______________________\n")
     append_to_event_log("Report writer agent")
