@@ -1,0 +1,28 @@
+## Order to Cash Process Analysis: Potential Audit Risks
+
+### 1. **Order Validation -> Order Validation**
+   - **Frequency:** 9,055
+   - **Performance:** 1,778,946.229
+   - **Explanation:** The loop in the order validation step suggests potential inefficiencies or issues in the validation criteria. Multiple validations might indicate incomplete or erroneous data that could lead to incorrect order processing, increasing the risk of revenue loss or customer dissatisfaction.
+
+### 2. **Customer Credit Check -> Customer Credit Check**
+   - **Frequency:** 21,514
+   - **Performance:** 1,802,303.237
+   - **Explanation:** A repetitive credit check indicates potential issues with customer credit evaluation. This may cause delays in order processing and risk accepting orders from customers with insufficient credit limits, leading to potential financial exposure.
+
+### 3. **Goods Shipped -> Payment Received**
+   - **Frequency:** 18,835
+   - **Performance:** 1,026,978.311
+   - **Explanation:** The substantial frequency of shipments before payment receipt highlights a risk of delayed payments or potential non-payments. This could lead to cash flow issues, impacting the company’s financial health. Proper checks should ensure payment receipt before shipment.
+
+### 4. **Send Invoice -> Payment Received**
+   - **Frequency:** 27,028
+   - **Performance:** 2,017,517.642
+   - **Explanation:** Delays in payment receipt post-invoicing suggest invoicing issues or inadequate follow-up on collections. Timely and accurate invoicing along with efficient collections processes are crucial to mitigate this risk.
+
+### 5. **Customer Credit Check -> Order Rejected**
+   - **Frequency:** 8,662
+   - **Performance:** 1,750,313.184
+   - **Explanation:** The high frequency of credit-related rejections may indicate overly stringent credit policies or inadequate credit review processes. This can result in lost sales opportunities and requires reassessment of credit policies to balance risk and sales opportunities efficiently.
+
+These steps/components identify loops, delays, and inefficiencies that could contribute to audit risks within P&G’s order to cash process, suggesting areas for process improvement and risk mitigation.

@@ -1,0 +1,1 @@
+focus: environmental risks, company: Walmart, file: purchase_to_pay_event_log.csv, process: purchase to pay
