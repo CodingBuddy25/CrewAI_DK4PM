@@ -11,6 +11,7 @@ DK_company_search:
   expected_output: >
     A thorough research with many references, expecting at least 20 full references.
   agent: DK_company_agent
+  human_input: True
 
 DK_process_search:
   description: >
@@ -18,6 +19,8 @@ DK_process_search:
   expected_output: >
     A thorough research with many references, expecting at least 20 full references.
   agent: DK_process_agent
+  human_input: True
+
 
 writing_task:
   description: >
@@ -42,3 +45,5 @@ writing_task:
     - [https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/cpg-operations-how-to-win-in-a-rapidly-changing-environment](https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/cpg-operations-how-to-win-in-a-rapidly-changing-environment)
 
   agent: writing_agent
+  human_input: True
+

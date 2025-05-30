@@ -1,4 +1,4 @@
-# Order to Cash Process at Proctor and Gamble: An In-depth Analysis 
+# Order to Cash Process at Proctor and Gamble: An In-depth Analysis
 
 ## Introduction
 The Order to Cash (O2C) process is integral to Proctor and Gamble's (P&G) supply chain and financial management, directly impacting its cash flow and overall efficiency. This report examines key stages of the O2C process at P&G, integrating insights from research studies and Project Management (PM_agent) diagnostics to provide a comprehensive analysis.
@@ -11,10 +11,10 @@ Following order entry, the next step is **Order Fulfillment**, which includes ma
 ## Order Fulfillment -> Invoicing
 Upon successful order fulfillment, the next step is **Invoicing**, which connects product dispatch to payment collection. Errors in invoicing lead to delayed payments, impacting cash flow. P&G has streamlined its invoicing procedures to ensure accuracy and prompt billing, contributing to improvements in its Days Sales Outstanding (DSO) metric. Their annual report highlights how effective invoicing practices have led to a shorter billing cycle and enhanced financial performance [Procter & Gamble Annual Report FY2023](https://www.sec.gov).
 
-## Invoicing -> Payment Collection 
+## Invoicing -> Payment Collection
 The fourth stage, **Payment Collection**, is essential for completing the O2C loop. Bottlenecks here can hinder cash flow. P&G employs a robust Accounts Receivable framework powered by automated systems that actively follow up on late payments. A study on the company’s supply chain finance highlights how P&G effectively combines analytics with targeted initiatives that accelerate cash inflow without overstretching credit operations [Supply Chain Finance - Should the Practice Be Adopted?](https://scholarworks.gvsu.edu/cgi/viewcontent.cgi?article=1213&context=sbr).
 
-## Payment Collection -> Customer Feedback and Returns Management 
+## Payment Collection -> Customer Feedback and Returns Management
 The final step in the O2C process is **Customer Feedback and Returns Management**, which plays a vital role in improving operational efficiency. High return levels can signal deficiencies in earlier stages, such as order fulfillment. P&G leverages data from customer feedback to enhance product offerings and minimize returns. By integrating customer data into their processes, P&G identifies trends that facilitate continuous improvement in the O2C cycle [Continuous Improvement in Procter and Gamble’s Operations](https://www.opm.gov/policy-data-oversight/strategic-management-of-humans-resources/).
 
 ## Conclusion
