@@ -1,27 +1,53 @@
 PM_diagnostic:
   description: >
-    Use the tools that you have to understand and decompose the process. The order of the tools you should use is: choosing_approach_tool, abstraction_tool and then process_analysis_tool.  For the choosing_approach, if the output is not close to "DFG" or "Temporal Profile" or "Variants" then run it again. For the abstraction tool, the first input is {filename} and the second is what the choosing_approach had as output. Use the writing_file_tool and save the response.
+    Use the tools that you have to understand and decompose the process. The order of the tools you should use is: choosing_approach_tool and the abstraction_tool.
+    For the choosing_approach, if the output is not close to "DFG" or "Temporal Profile" or "Variants" then run it again. 
+    For the abstraction tool, the first input is {filename} and the second is what the choosing_approach had as output.
   expected_output: >
     A detailed description (with examples) of the most important areas in the event log. They can be bottlenecks or really crucial/large events in the event log.
   agent: PM_agent
 
+Process_analysis_task:
+  description: >
+    Can you give me the most relevent process steps/activities of the PM_diagnostic output related to {focus}? The abstraction is {chosen_approach} select from the three options below which information can help you to analyze the abstraction:
+    If abstraction is DFG: Common Paths: Look for nodes with high incoming or outgoing edges and detect cycles that may suggest rework.
+    If abstraction is Temporal Profile: identify slow steps,analyze the time between activities to detect waiting periods, look for inconsistencies in timing.
+    If abstraction is Variants: Identify which variants are most common and which are rare, compare variants to see which are less efficient.
+  expected_output: >
+    Can you give me the most relevant process steps/activities for the {focus} focus of the {process} process?
+    Remember to justify the answer always! Give five or more relevant process steps
+    and their explanation, nothing else.
+    List the steps in a structured way, and always explain your answer and use elements 
+    from the original text in your answer.
+  agent: Process_analysis_agent
+
 DK_company_search:
   description: >
-    Conduct a thorough research about {company} using the background memory of {process} if you have it. Use the tavily_search_company tool and make sure that the research has many references. Use the writing_file_tool and save the response.
+    Conduct a thorough research about {company} using the background memory of {process} if you have it. Use the tavily_search_company tool and make sure that the research has many references.
   expected_output: >
     A thorough research with many references, expecting at least 20 full references.
   agent: DK_company_agent
 
 DK_process_search:
   description: >
-    Conduct a thorough research about the {process} process using the background memory of {company} if you have it. Use the tavily_search_process tool and make sure that the research has many references. Use the writing_file_tool and save the response.
+    Conduct a thorough research about the {process} process using the background memory of {company} if you have it. Use the tavily_search_process tool and make sure that the research has many references.
   expected_output: >
     A thorough research with many references, expecting at least 20 full references.
   agent: DK_process_agent
 
+DK_causes_search:
+  description: > 
+    Conduct a thorough research about the causes for {focus} in the {process} process, you may use all the 
+    information from previous agents and tasks. Always use the output from the Process_analysis_task to find which part
+    of the process to analyze the causes of. You can also take the {company} company into consideration. You may use the tavily_search_basic to search the internet. 
+
+  expected_output: >
+    A clear list that links a step in the process (from the Process_analysis_task) to the possible causes.
+  agent: DK_causes_agent
+
 writing_task:
   description: >
-    Review the contents from both researches and the PM diagnostic task and weave them together into a coherent report of at least 1500 words which combines the {process} with the {company} with the steps from the result of the PM_agent analysis / PM_diagnostic task. 
+    Review the results from all agents and weave them together into a coherent report of at least 1500 words which combines the {process} with the {company} with the steps from the result of the PM_agent analysis / PM_diagnostic task. 
     You may leave out information that seems irrelevant. Provide links for references if possible.     Use at least 20 relevant references in the paper (if possible) and at most 40 references. Use the writing_file_tool and save the response.
     Use the writing_file_tool and save the response.
 

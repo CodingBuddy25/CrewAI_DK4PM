@@ -1,29 +1,28 @@
 from crewai.tools import BaseTool
-from typing import Type
-from pydantic import BaseModel
-
 import os
+from pydantic import BaseModel
+from typing import Type
+
 
 from langchain_community.tools.tavily_search import TavilySearchResults
 
-
-class tavily_tool_inputs(BaseModel):
+class tavily_search_basic_inputs(BaseModel):
     """uses tavily to search the internet"""
-    prompt_DK_company: str
+    prompt_causes_agent: str
 
-class tavily_search_company(BaseTool):
-    name: str = "Tavily search tool"
-    description: str = (
-        """uses tavily to search the internet""")
-    args_schema: Type[BaseModel] = tavily_tool_inputs
+class tavily_search_basic(BaseTool):
+    """Uses tavily to searc the internet"""
+    name: str = "Tavily search tool basic"
+    description: str = ("""uses tavily to search the internet""")
+    args_schema: Type[BaseModel] = tavily_search_basic_inputs
 
-    def _run(self, prompt_DK_company:str):
+    def _run(self, prompt_causes_agent):
         TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
         research = TavilySearchResults(api_key=TAVILY_API_KEY, max_results=10)
         #can increase the max results
         try:
             #from the example in https://medium.com/@venugopal.adep/building-an-ai-research-pipeline-with-crewai-and-langchain-a013a627824f
-            results = research.invoke(prompt_DK_company)
+            results = research.invoke(prompt_causes_agent)
 
             formatted_results = ""
             for res in results:

@@ -1,18 +1,18 @@
 ## Introduction
 
-The Order-to-Cash (O2C) process is a critical aspect of any business operation, and Procter & Gamble (P&G) exemplifies excellence in this domain. In this report, I will synthesize the findings from multiple agents, focusing on the audit risks, process inefficiencies, and the overarching necessity for optimization within P&G’s O2C workflow. By analyzing at least five vital steps from the results of the PM_agent and PM_diagnostic task, I will demonstrate the nuanced complexities of the O2C process while referencing the significant impact of these steps on overall business performance. 
+The Order-to-Cash (O2C) process is a critical aspect of any business operation, and Procter & Gamble (P&G) exemplifies excellence in this domain. In this report, I will synthesize the findings from multiple agents, focusing on the audit risks, process inefficiencies, and the overarching necessity for optimization within P&G’s O2C workflow. By analyzing at least five vital steps from the results of the PM_agent and PM_diagnostic task, I will demonstrate the nuanced complexities of the O2C process while referencing the significant impact of these steps on overall business performance.
 
 ## Analysis of Key Steps in the O2C Process
 
 ### 1. Order Validation -> Customer Credit Check
 
-The first critical step identified in the O2C process is **Order Validation**, which occurs frequently with a high performance metric. With 54,646 occurrences generating a performance value of 1,887,445.053, this step is the frontline defense against errors that could cascade through the O2C process. Errors during order validation can result in incorrect orders being shipped, which not only affects customer satisfaction but also exposes the organization to compliance risks. 
+The first critical step identified in the O2C process is **Order Validation**, which occurs frequently with a high performance metric. With 54,646 occurrences generating a performance value of 1,887,445.053, this step is the frontline defense against errors that could cascade through the O2C process. Errors during order validation can result in incorrect orders being shipped, which not only affects customer satisfaction but also exposes the organization to compliance risks.
 
 Improper validation against customer details such as address accuracy, available inventory, and agreed pricing structures can lead to discrepancies and financial penalties (Guo & Liu, 2020). An optimized Order Validation process directly influences subsequent steps, including **Customer Credit Check**, which occurs next, indicating a tight integration between validating orders and assessing credit risk. Efficient functioning here can substantially reduce the likelihood of erroneous credit assessments, which have been previously linked to significant financial losses for organizations (Agarwal & Narayanan, 2021).
 
 ### 2. Customer Credit Check -> Payment Received
 
-Following the Credit Check, the next significant step is the transition from **Customer Credit Check** to **Payment Received**, which is vital in reducing financial exposure to risky customers. The Customer Credit Check occurs 43,544 times with a substantial performance metric of 2,987,028.747. A failure in performing this step correctly opens doors for high-risk orders, potentially leading to defaults in payments later on. 
+Following the Credit Check, the next significant step is the transition from **Customer Credit Check** to **Payment Received**, which is vital in reducing financial exposure to risky customers. The Customer Credit Check occurs 43,544 times with a substantial performance metric of 2,987,028.747. A failure in performing this step correctly opens doors for high-risk orders, potentially leading to defaults in payments later on.
 
 Understanding customer credit profiles allows companies to mitigate risks before orders are approved. A streamlined process ensures that only credit-verified customers are allowed to place orders, thus fortifying the company’s financial stability (Parthasarathy, 2018). Further assessment and re-engineering of this process step can decrease the manual interventions often required, thereby reducing the operational bottlenecks associated with high rejection rates.
 

@@ -1,15 +1,16 @@
 from crewai import Agent, Crew, Process, Task
+from typing import List
+import os
+
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
-from typing import List
 
 from tools.choosing_approach_tool import choosing_approach_tool
 from tools.abstraction_tool import abstraction_tool
-from tools.process_analysis_tool import process_analysis_tool
-from tools.file_writing_tool import writing_file_tool
 
 from tools.tavily_search_company import tavily_search_company
 from tools.tavily_search_process import tavily_search_process
+from tools.tavily_search_basic import tavily_search_basic
 
 @CrewBase
 class Dinsdag():
@@ -27,10 +28,16 @@ class Dinsdag():
     def PM_agent(self) -> Agent:
         return Agent(
             config=self.agents_config['PM_agent'],
-            tools=[choosing_approach_tool(), abstraction_tool(),process_analysis_tool()],
+            tools=[choosing_approach_tool(), abstraction_tool()],
             verbose=True
         )
 
+    @agent
+    def Process_analysis_agent(self) -> Agent:
+        return Agent(
+            config=self.agents_config['Process_analysis_agent'], # type: ignore[index]
+            verbose=True,
+        )
     @agent
     def DK_company_agent(self) -> Agent:
         return Agent(
@@ -48,6 +55,13 @@ class Dinsdag():
         )
 
     @agent
+    def DK_causes_agent(self) -> Agent:
+        return Agent(
+            config=self.agents_config['DK_causes_agent'], # type: ignore[index]
+            verbose=True,
+            tools = [tavily_search_basic()]
+        )
+    @agent
     def writing_agent(self) -> Agent:
         return Agent(
             config=self.agents_config['writing_agent'], # type: ignore[index]
@@ -60,6 +74,11 @@ class Dinsdag():
         return Task(
             config=self.tasks_config['PM_diagnostic'],
         )
+    @task
+    def Process_analysis_task(self) -> Task:
+        return Task(
+            config=self.tasks_config['Process_analysis_task'],
+        )
 
     @task
     def DK_company_search(self) -> Task:
@@ -71,6 +90,11 @@ class Dinsdag():
     def DK_process_search(self) -> Task:
         return Task(
             config=self.tasks_config['DK_process_search'],
+        )
+    @task
+    def DK_causes_search(self) -> Task:
+        return Task(
+            config=self.tasks_config['DK_causes_search'],
         )
 
     @task
