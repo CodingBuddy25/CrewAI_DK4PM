@@ -20,6 +20,7 @@ def run():
     prompt_DK_company = f'Conduct a thorough research about {company}  using the context of {process} if you have it. Use the tavily_search_company and make sure that the research has many references.'
     prompt_DK_process = f'Conduct a thorough research about the {process} process using the context of {company} if you have it. Use the tavily_search_process and make sure that the research has many references.'
     prompt_causes_agent = f'Conduct a thorough research to find reasons for {focus} in the {process} process at {company}'
+    main_question = f"Can you find the {focus} in the {process} process at {company} and what are the potential causes reasons for the {focus}?"
     inputs = {
         'process': process,
         'company': company,
@@ -28,7 +29,8 @@ def run():
         'filename': filename,
         'prompt_DK_company': prompt_DK_company,
         'prompt_DK_process': prompt_DK_process,
-        'prompt_causes_agent': prompt_causes_agent
+        'prompt_causes_agent': prompt_causes_agent,
+        'main_question':main_question
     }
     
     try:

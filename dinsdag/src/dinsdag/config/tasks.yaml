@@ -47,9 +47,8 @@ DK_causes_search:
 
 writing_task:
   description: >
-    Review the results from all agents and weave them together into a coherent report of at least 1500 words which combines the {process} with the {company} with the steps from the result of the PM_agent analysis / PM_diagnostic task. 
+    Review the results from all agents and weave them together into a coherent report to answer the main question: {main_question}. Make sure that the result combines the {process} with the {company} with the steps from the result of the PM_agent analysis / PM_diagnostic task. 
     You may leave out information that seems irrelevant. Provide links for references if possible.     Use at least 20 relevant references in the paper (if possible) and at most 40 references. Use the writing_file_tool and save the response.
-    Use the writing_file_tool and save the response.
 
   expected_output: >
     Formatted as markdown without '```'. 

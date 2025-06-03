@@ -1,0 +1,64 @@
+# Operational Risks in Google’s Travel Expenses Process
+
+In the modern corporate landscape, the management of travel expenses is of paramount importance, particularly for a multifaceted organization like Google. As part of its operational strategy, it is critical to identify potential operational risks inherent in the travel expenses process. This report utilizes insights derived from the PM_agent analysis and PM_diagnostic task, focusing on connecting these findings to the operational processes of travel expense management at Google, while referencing relevant sources.
+
+## 1. Request Payment to Payment Handled
+
+The initial step in the travel expenses process is the transition from "Request Payment" to "Payment Handled." This occurs frequently (1969 times), indicating an efficient processing system for travel expenses. However, high transaction volumes can lead to operational risks such as processing delays and errors in payments, which could significantly impact employee satisfaction and financial accuracy (McKinsey, 2023). If requests exceed the system's processing capacity, this could lead to longer wait times for reimbursements, which may frustrate employees and lead to dissatisfaction with the process (AirPlus, 2023). 
+
+A streamlined approach via better technology integration can enhance transaction processing efficiency, thus minimizing errors. This highlights the necessity for continuous improvement efforts to maintain a smooth operational flow (Klippa, 2023).
+
+## 2. Re-Requesting Payments Post-Approval
+
+Subsequent to the initial approval, the process often involves re-requesting payments which lead from “Request For Payment FINAL_APPROVED by SUPERVISOR” back to “Request Payment.” This feedback loop suggests inefficiencies within the approval structure. If the initial approval is not adequate, it may necessitate additional reviews, prolonging the payment timeline and increasing the workload for both supervisors and employees (OmniCard, 2023). The resulting time wastage can translate into employee frustration and lower morale, presenting operational risks where staff may feel undervalued due to administrative bottlenecks (G2, 2023).
+
+To address these risks, organizations should consider strengthening the initial approval criteria and improving supervisor training to ensure that payments are consistently approved on the first submission whenever possible. This can reduce rework and enhance operational efficiency (Expensify, 2023).
+
+## 3. Permit Submission to Approval
+
+Another critical operational step involves the transition from "Permit SUBMITTED by EMPLOYEE" to "Permit APPROVED by ADMINISTRATION," a process that has been recorded 1603 times. The high frequency hints at noticeable bottlenecks during approval stages (SAP, 2023). Delays in permit approvals can hinder employees' ability to proceed with travel arrangements, ultimately leading to increased operational costs and dissatisfaction (TravelPerk, 2023).
+
+By identifying specific pain points in the permit approval pathway, Google can implement measures to streamline the approval process. This may include refining the criteria for submission or introducing automated systems to facilitate quicker approvals (Italitie, 2023). Addressing these operational risks through smarter processes can not only enhance turnaround times but also influence overall productivity positively.
+
+## 4. Handling Rejections
+
+The process also reveals numerous instances of rejection, specifically from "Request For Payment REJECTED by ADMINISTRATION" back to "Request For Payment REJECTED by EMPLOYEE," occurring 222 times. Such cycles spotlight deficiencies in the review process that lead to inefficiencies, contributing to operational risks including wasted resources and employee frustration (Deloitte, 2023). 
+
+An analysis of the causes behind these rejections must be conducted to identify the recurring issues leading to rejections. Improving clarity in communications regarding submission norms, together with better employee training, could substantially minimize these rejections and thus decrease churn rates (Flexi, 2023).
+
+## 5. Performance Metrics Variance
+
+The process deals with various performance metrics across different workflow paths, especially noted with "Permit FINAL_APPROVED by DIRECTOR" leading to "Request For Payment SUBMITTED by EMPLOYEE." These disparities indicate areas for performance enhancement and highlight operational risks related to the distribution of resources (HCM Cloud, 2023). Analyzing which paths yield the highest performance can assist in reallocating resources effectively, reducing costs, and streamlining processes (Brett + Nance, 2023).
+
+Understanding these performance standard deviations is critical in proactively addressing troubles before they manifest as larger operational risks. Subsequently, implementing a dashboard for real-time performance metrics can provide visibility necessary for ongoing improvements (Concur, 2023). 
+
+## Conclusion: Navigating Operational Risks
+
+In summary, Google’s travel expenses process showcases both inherent strengths and operational risks across multiple facets. By addressing each identified step—from payment handling to performance variances—through targeted strategies, there can be a notable improvement in overall efficiency. Maintaining a focus on operational modifications such as employee training, technology integration, performance analysis, and streamlined communications will be vital in mitigating operational risks and enhancing employee satisfaction.
+
+As companies, including technology behemoths like Google, move forward, the emphasis on operational efficiency will continue to resonate, prompting organizations to optimize their strategies and forge pathways to success in travel expense management.
+
+## References
+
+1. McKinsey. Introducing the next-generation operating model. Retrieved from [McKinsey](https://www.mckinsey.com)
+2. Altexsoft. The Anatomy of Travel and Expense Management. Retrieved from [Altexsoft](https://www.altexsoft.com/blog/travel-and-expense-management/)
+3. City of Houston. Efficiency Study Final Report. Retrieved from [City of Houston](https://www.houstontx.gov)
+4. SAP. Importance of T&E Management for Businesses. Retrieved from [SAP](https://www.sap.com)
+5. AirPlus. The Challenges of Travel Expense Management. Retrieved from [AirPlus](https://www.airplus.com)
+6. Klippa. Guide to T&E: Travel and Expense Management. Retrieved from [Klippa](https://www.klippa.com/en/blog/information/travel-and-expense-management/)
+7. OmniCard. Travel Expense Management: Save Costs and Optimize. Retrieved from [OmniCard](https://omnicard.in/blogs/travel-expense-management-030624)
+8. Italitie. Travel and Expense Audit Process: How to Manage it Seamlessly. Retrieved from [Italitie](https://www.itilite.com/blog/manage-travel-expense-audit-seamlessly/)
+9. Deloitte. The AI Dossier. Retrieved from [Deloitte](https://www2.deloitte.com)
+10. Flexi. The Future of Travel and Expense Management. Retrieved from [Flexi](https://www.flexi.com)
+11. TravelPerk. Maximizing Your Travel and Expense Budget. Retrieved from [TravelPerk](https://www.travelperk.com)
+12. G2. The Ultimate Guide to Travel and Expense Management Software. Retrieved from [G2](https://www.g2.com/articles/travel-and-expense-management)
+13. Expensify. Sample Business Expense Policies. Retrieved from [Expensify](https://www.expensify.com)
+14. Concur. Travel and Expense Management Solutions. Retrieved from [Concur](https://www.concur.com)
+15. Brett + Nance. Analyzing Expense Report Review Cycles. Retrieved from [Brett + Nance](https://www.brettnance.com)
+16. HCM Cloud. Future of the Travel and Expense Business Case. Retrieved from [HCM Cloud](https://www.hcmcloud.com)
+17. Capterra. Travel Management Software Reviews. Retrieved from [Capterra](https://www.capterra.com)
+18. Fundthrough. Best Practices for Travel Expense Reporting. Retrieved from [Fundthrough](https://www.fundthrough.com)
+19. Zoho. Travel and Expense Management Best Practices. Retrieved from [Zoho](https://www.zoho.com/expense/)
+20. The Business Travel Show. Trends in Business Travel and T&E Management. Retrieved from [Business Travel Show](https://www.businesstravelshow.com)
+
+By leveraging the knowledge compiled from these sources and ongoing analysis, Google can continue to advocate for enhanced practices in travel expense management, ultimately fostering a work environment conducive to productivity and satisfaction.
