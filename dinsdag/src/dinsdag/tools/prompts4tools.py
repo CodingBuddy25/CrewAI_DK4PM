@@ -47,5 +47,5 @@ process_analysis_prompt = """
         Can you give me the most important process steps/activities of your analysis?
          Remember to justify the answer always! Preferably give between 3 to 5 process steps
           and their explanation, nothing else.
-        List those in a structured way. Here is the process you have to analyze: {abstraction}\n
+        List those in a structured way. Here is the process you have to analyze:\n
         """

@@ -17,7 +17,7 @@ def run():
     company = str(input("What is the company your research? e.g. Google, IKEA, proctor and gamble (P&G)"))
     process = str(input("What is the process your research should analyse? e.g. loan application, purchase-to-pay, IT incident handling, order to cash"))
     filename = str(input("What is the filename (stored int he Event_logs folder) do you want to analyse? e.g. O2C.csv"))
-    main_question = f"Can you find the {focus} in the {process} process at {company} and what are the potential causes reasons for the {focus}?"
+    main_question = f"Can you find the {focus} in the {process} process at {company} and what are the potential causes for the {focus}?"
     inputs = {
         'process': process,
         'company': company,
