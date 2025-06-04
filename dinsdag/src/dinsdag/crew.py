@@ -3,7 +3,7 @@ from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 from tools.research_tool import research_tool
-from tools.process_analysis_tool import process_analysis_tool
+from tools.process_discovery_tool import process_discovery_tool
 
 @CrewBase
 class Dinsdag():
@@ -24,7 +24,7 @@ class Dinsdag():
         return Agent(
             config=self.agents_config['Worker_agent'],
             verbose=True,
-            tools = [process_analysis_tool(),research_tool]
+            tools = [process_discovery_tool,research_tool]
         )
 
     @agent

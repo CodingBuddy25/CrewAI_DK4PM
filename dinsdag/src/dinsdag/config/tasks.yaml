@@ -2,7 +2,7 @@ planner_agent_task:
   description: >
     Conduct a thorough research to answer the main question: answer the main question: {main_question}. Make sure that the result combines the {process} with the {company}. 
         Do this by following these steps:
-        Decompose the main question into subquestions which require domain knowledge to answer. The answer to these 
+        Decompose the main question into 2-4 subquestions which require domain knowledge to answer. The answer to these 
         subquestions will later be combined to form the final answer.
   expected_output: >
     A plan of action for the answering of the main question. This involves the decomposition of the prompt with 
@@ -12,8 +12,8 @@ planner_agent_task:
 Worker_agent_task:
   description: >
     Answer the main question: {main_question}.
-    Execute the process_discovery_tool. Pass the focus:{focus}, company: {company}, process:{process} and filename:{filename} as string inputs for the tool in that order. Use the output to analyse the important parts of the process.
-    Use the research_tool to answer the subquestions from the planner_agent and make sure that the research has many references.
+    Run the process_discovery_tool ONCE, if it has already been called before in another run of the Worker_agent, do NOT call it again. Pass the focus:{focus} and filename:{filename} as string inputs for the tool in that order. Use the output to analyse the important parts of the process. 
+    Use the research_tool to answer the subquestions from the planner_agent and make sure that the research has many references. You can call the research tool at most four times with different subquestions.
   expected_output: >
     A thorough research with many references, expecting at least 20 full references. The main question is answered.
   agent: Worker_agent
