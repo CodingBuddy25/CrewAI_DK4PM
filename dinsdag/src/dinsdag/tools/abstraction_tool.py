@@ -26,9 +26,7 @@ class abstraction_tool(BaseTool):
     args_schema: Type[BaseModel] = abstraction_tool_inputs
 
     def _run(self, filename: str, chosen_approach:str) -> str:
-        # workingDirectory = os.path.dirname(sys.argv[0])
         workingDirectory = os.path.dirname(os.path.abspath(filename))
-        # print(os.getcwd(), "is the current working directory")
         file_path = os.path.join(workingDirectory, "tools", "Event_logs", filename)
 
         # Distinction between CSV and XES file formats
