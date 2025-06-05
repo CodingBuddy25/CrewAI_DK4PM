@@ -10,13 +10,13 @@ In this repository there are quite a few branches so there will be a brief expla
 
 ## Folder structure
 
-    Event_Logs:
-    There are five event logs that can be found in the different branches, they are BPI_Challenge_2013_incidents.xes, AP_event_log_26052023.csv,O2C.csv, PrepaidTravelCost.xes and purchase_to_pay_event_log.csv.
+Event_Logs:
+There are five event logs that can be found in the different branches, they are BPI_Challenge_2013_incidents.xes, AP_event_log_26052023.csv,O2C.csv, PrepaidTravelCost.xes and purchase_to_pay_event_log.csv.
 
-    One of the event log files named BPI_Challenge_2017.xes is not found in the files because it is too large to store, it can be found on https://data.4tu.nl/articles/dataset/BPI_Challenge_2017/12696884 if you want to reproduce the results.
+One of the event log files named BPI_Challenge_2017.xes is not found in the files because it is too large to store, it can be found on https://data.4tu.nl/articles/dataset/BPI_Challenge_2017/12696884 if you want to reproduce the results.
 
-    Prototype: contains the code of the PoC
-    Experiments: contains the setup and outputs of the conducted experiments
+Prototype: contains the code of the PoC
+Experiments: contains the setup and outputs of the conducted experiments
 
 ## Architecture
 ## ⚙️ Getting Started
