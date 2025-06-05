@@ -1,8 +1,9 @@
-# Specialization is key: experimenting with the amount of domain knowledge providing LLM agents for complex prompts
+# Specialization is key: a study on the effects of specialization of LLM agents for the answering of complex prompts
 
-\Abstract of my paper
-
-    Paper: Reintje van Gulijk, Peter van der Putten (title) year etc...
+This research concludes that there is an optimal degree of specialization (N_agents − 1) above zero for domain knowledge agents when answering complex prompts. The main research creates three multi agent system setups with varying degrees of specialization for domain knowledge gathering agents. What can be seen is that as the number of specialized agents $N$ increases, the quality of the answer initially increases in terms of integrated domain knowledge (which is linked to the absence of repetition and the reduction of generalized statements). However at a certain point, there are more domain knowledge agents than domain knowledge areas in the prompt at which point the quality of the output decreases again. An exploratory experiment adds additional specialization to the agents by adding a human-in-the-loop (HITL) whereby the user can provide feedback either within-agent (agent is finished once the feedback is processed) or between-agents (which returns to agents after full execution). Of the two setups, the within-agent feedback method was very effective in increasing the quality of the output and the between-agent setup did not. Future research could look at experimenting with the length of prompts and improving the quality of the individual agents with stronger researcher implementations (such as GPT_researcher).  
+    Paper:  Specialization is key: a study on the effects of specialization of LLM agents for the answering of complex prompts
+            Reintje van Gulijk, Peter van der Putten, Aske Plaat
+            July 2025
 
 ## Branches overview
 In this repository there are quite a few branches so there will be a brief explanation per branch.
@@ -40,8 +41,6 @@ Visit http://localhost:8000 to start.
 
     Bachelor thesis student email: s3291480@vuw.leidenuniv.nl
     Thesis Supervisor: Peter van der Putten - LIACS - Leiden University
-
-## Disclaimer
 
 This project, GPT Researcher, is an experimental application and is provided "as-is" without any warranty, express or implied. We are sharing codes for academic purposes under the Apache 2 license. Nothing herein is academic advice, and NOT a recommendation to use in academic or research papers.
 
