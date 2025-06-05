@@ -55,10 +55,7 @@ export TAVILY_API_KEY={Your Tavily API Key here}`
 
 4. Install dependencies and start the server:
 
-`pip install -r requirements.txt
-python -m uvicorn main:app --reload`
-
-Visit http://localhost:8000 to start.
+`pip install -r requirements.txt'
 
 ## ✉️ Support / Contact us
 
