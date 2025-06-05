@@ -6,7 +6,26 @@ This research concludes that there is an optimal degree of specialization (N_age
             July 2025
 
 ## Branches overview
-In this repository there are quite a few branches so there will be a brief explanation per branch.
+In this repository there are quite a 5 branches so there will be a brief explanation per branch.
+<img src="https://github.com/user-attachments/assets/f4d1d7fd-7f19-42a6-b609-889f56d65c9d" width=40% height=40%>
+
+
+Crew_DoS0: In this branch, there is only one worker agent that gathers domain knowledge. Using a planner agent it executes the tasks given by it. 
+
+<img src="https://github.com/user-attachments/assets/c44c58c8-abf1-4447-9fba-58182a07aae5" width=40% height=60%>
+
+Crew_DoS2: There are three specialized domain knowledge agents. One is a process mining expert, one is a company expert and one is a process expert. 
+<img src="https://github.com/user-attachments/assets/c7dbeefe-e56b-48aa-9507-9140f7515325" width=50% height=50%>
+
+Crew_DoS4: There are five specialized domain knowledge agents. See the image for the roles. 
+![Schermafbeelding 2025-05-30 212415](https://github.com/user-attachments/assets/84e22037-6152-4fcf-a912-17527e81bb67)
+
+Crew_DoS2_HITL: Adding extra specialization by allowing the human user to input feedback after an agent is completed. The agent can be rerun as many times as the user wants. You cannot hop back to an agent that was executed before.
+
+Flow_DoS_HITL: Using a different coding structure altogether, the human-in-the-loop can rerun entire agents. The image below is of the automatically generated image with the use of the function .plot("FlowPlot.html")
+
+<img src="https://github.com/user-attachments/assets/cf6e4be5-1eef-452f-8136-4f626bcfdf8c" width=25% height=50%>
+
 
 ## Folder structure
 
