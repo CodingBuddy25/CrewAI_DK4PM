@@ -13,7 +13,6 @@ def run():
     """
     Run the crew.
     """
-    #DFG is the default plot
     focus = str(input("What is the focus of your research? e.g. bottlenecks, financial risks, IT and Cyber risks, audit risk"))
     company = str(input("What is the company your research? e.g. Google, IKEA, proctor and gamble (P&G)"))
     process = str(input("What is the process your research should analyse? e.g. loan application, purchase-to-pay, IT incident handling, order to cash"))
@@ -37,42 +36,3 @@ def run():
 
 
 run()
-#
-# def train():
-#     """
-#     Train the crew for a given number of iterations.
-#     """
-#     inputs = {
-#         "topic": "AI LLMs",
-#         'current_year': str(datetime.now().year)
-#     }
-#     try:
-#         Dinsdag().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
-#
-#     except Exception as e:
-#         raise Exception(f"An error occurred while training the crew: {e}")
-#
-# def replay():
-#     """
-#     Replay the crew execution from a specific task.
-#     """
-#     try:
-#         Dinsdag().crew().replay(task_id=sys.argv[1])
-#
-#     except Exception as e:
-#         raise Exception(f"An error occurred while replaying the crew: {e}")
-#
-# def test():
-#     """
-#     Test the crew execution and returns the results.
-#     """
-#     inputs = {
-#         "topic": "AI LLMs",
-#         "current_year": str(datetime.now().year)
-#     }
-#
-#     try:
-#         Dinsdag().crew().test(n_iterations=int(sys.argv[1]), eval_llm=sys.argv[2], inputs=inputs)
-#
-#     except Exception as e:
-#         raise Exception(f"An error occurred while testing the crew: {e}")

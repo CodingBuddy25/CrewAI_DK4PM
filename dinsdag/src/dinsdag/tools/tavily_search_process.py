@@ -30,7 +30,7 @@ class tavily_search_process(BaseTool):
                 formatted_results += f"Title: {res.get('title', 'No Title')}\n"
                 formatted_results += f"Content: {res.get('content', 'No Content')}\n\n"
 
-            print("THE RESULTS ISSSSSS:", formatted_results, "\n RETREVTIOETNE$R#W$ORCTSEO*SUTS$*UCT SGOER")
+            print("The results is:", formatted_results, "\n ____________________________________")
             return formatted_results if formatted_results else "No results found."
         except Exception as e:
             return f"Error searching the internet: {str(e)}"
