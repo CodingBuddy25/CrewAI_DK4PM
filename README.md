@@ -7,8 +7,6 @@ This research concludes that there is an optimal degree of specialization (N_age
 
 ## Branches overview
 In this repository there are quite a 5 branches so there will be a brief explanation per branch.
-<img src="https://github.com/user-attachments/assets/f4d1d7fd-7f19-42a6-b609-889f56d65c9d" width=40% height=40%>
-
 
 Crew_DoS0: In this branch, there is only one worker agent that gathers domain knowledge. Using a planner agent it executes the tasks given by it. 
 
@@ -38,6 +36,10 @@ Prototype: contains the code of the PoC
 Experiments: contains the setup and outputs of the conducted experiments
 
 ## Architecture
+
+<img src="https://github.com/user-attachments/assets/f4d1d7fd-7f19-42a6-b609-889f56d65c9d" width=40% height=40%>
+
+
 ## ⚙️ Getting Started
 ### Installation
 
