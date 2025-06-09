@@ -4,6 +4,7 @@ PM_diagnostic:
   expected_output: >
     A detailed description (with examples) of the most important areas in the event log. They can be bottlenecks or really crucial/large events in the event log.
   agent: PM_agent
+  human_input: True
 
 DK_company_search:
   description: >
@@ -45,5 +46,3 @@ writing_task:
     - [https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/cpg-operations-how-to-win-in-a-rapidly-changing-environment](https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/cpg-operations-how-to-win-in-a-rapidly-changing-environment)
 
   agent: writing_agent
-  human_input: True
-
