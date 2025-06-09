@@ -36,10 +36,8 @@ Event_log_readings is called a tool right now but I want to change it to a norma
 
         # If required, convert time format
         df[used_class.timestamp] = pd.to_datetime(df[used_class.timestamp], format=formatvariable)
-        print("fine")
         df = pm4py.format_dataframe(df, case_id=used_class.case, activity_key=used_class.activity,
                                     timestamp_key=used_class.timestamp)
-        print("fine2")
 
         event_log = pm4py.convert_to_event_log(df)
     else:
