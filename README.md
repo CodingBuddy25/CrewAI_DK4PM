@@ -26,14 +26,12 @@ Flow_DoS_HITL: Using a different coding structure altogether, the human-in-the-l
 
 
 ## Folder structure
-
-Event_Logs:
-There are five event logs that can be found in the different branches, they are BPI_Challenge_2013_incidents.xes, AP_event_log_26052023.csv,O2C.csv, PrepaidTravelCost.xes and purchase_to_pay_event_log.csv.
-
-One of the event log files named BPI_Challenge_2017.xes is not found in the files because it is too large to store, it can be found on https://data.4tu.nl/articles/dataset/BPI_Challenge_2017/12696884 if you want to reproduce the results.
-
-Prototype: contains the code of the PoC
-Experiments: contains the setup and outputs of the conducted experiments
+- `src/dinsdag/config/agents.yaml` has the agents definition
+- `src/dinsdag/config/tasks.yaml` has the task definitions and the agent that the task is coupled with
+- `src/dinsdag/crew.py` to set the sequential interaction of the agents
+- `src/dinsdag/main.py` to define the main inputs that will be passed throughout the program
+- `src/dinsdag/tools/Event Logs` contains five of the six event logs. One of the event logs is unfortunately too big but it can be found on https://data.4tu.nl/articles/dataset/BPI_Challenge_2017/12696884
+- `src/dinsdag/tools/...` these files are tools that the agents can call upon to accomplish their tasks, have a look in the company tavily search and the choosing approach tool if you are interested. 
 
 ## Architecture
 
