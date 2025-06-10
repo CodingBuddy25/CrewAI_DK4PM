@@ -1,6 +1,7 @@
 # Dinsdag Crew
 
-Welcome to the Dinsdag Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+Welcome to the Dinsdag Crew project, powered by [crewAI](https://crewai.com). 
+This crew_DoS2_HITL setup has been made by expanding and building upon the crewAI template, the information below is the standard information for CrewAI projects. For specific information on the project, see the README file of the crew_DoS2 branch.
 
 ## Installation
 
@@ -18,14 +19,14 @@ Next, navigate to your project directory and install the dependencies:
 ```bash
 crewai install
 ```
-### Customizing
+## Exploring the setup
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/dinsdag/config/agents.yaml` to define your agents
-- Modify `src/dinsdag/config/tasks.yaml` to define your tasks
-- Modify `src/dinsdag/crew.py` to add your own logic, tools and specific args
-- Modify `src/dinsdag/main.py` to add custom inputs for your agents and tasks
+- `src/dinsdag/config/agents.yaml` has the agents definition
+- `src/dinsdag/config/tasks.yaml` has the task definitions and the agent that the task is coupled with
+- `src/dinsdag/crew.py` to set the sequential interaction of the agents
+- `src/dinsdag/main.py` to define the main inputs that will be passed throughout the program
+- `src/dinsdag/tools/Event Logs` contains five of the six event logs. One of the event logs is unfortunately too big but it can be found on https://data.4tu.nl/articles/dataset/BPI_Challenge_2017/12696884
+- `src/dinsdag/tools/...` these files are tools that the agents can call upon to accomplish their tasks, have a look in the company tavily search and the choosing approach tool if you are interested. 
 
 ## Running the Project
 
@@ -37,18 +38,7 @@ $ crewai run
 
 This command initializes the dinsdag Crew, assembling the agents and assigning them tasks as defined in your configuration.
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
-
-## Understanding Your Crew
+## Understanding the Crew
 
 The dinsdag Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
 
-## Support
-
-For support, questions, or feedback regarding the Dinsdag Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
