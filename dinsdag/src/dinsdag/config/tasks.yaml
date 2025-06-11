@@ -46,3 +46,4 @@ writing_task:
     - [https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/cpg-operations-how-to-win-in-a-rapidly-changing-environment](https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/cpg-operations-how-to-win-in-a-rapidly-changing-environment)
 
   agent: writing_agent
+  human_input: True
