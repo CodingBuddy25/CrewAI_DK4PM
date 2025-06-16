@@ -5,6 +5,8 @@ This research concludes that there is an optimal degree of specialization (N_age
             Reintje van Gulijk, Peter van der Putten, Aske Plaat
             July 2025
 
+For the experiment outputs and the calculation method of the contribution percentage see: [GitHub repositories](https://github.com/CodingBuddy25/Evaluation_LLM)
+
 ## Branches overview
 In this repository there are quite a 5 branches so there will be a brief explanation per branch.
 
