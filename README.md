@@ -1,7 +1,17 @@
-# Specialization is key: a study on the effects of specialization of LLM agents for the answering of complex business prompts
+#  Specialization is key: a study on domain knowledge gathering agent specialization in process mining
+Within the area of process mining, there is a lot of expertise required to answer event log questions. However, expertise is expensive. This research will expand upon a proof of concept (PoC) by Vogt (2023) which uses a ReWOO framework to answer such event log questions. The framework supplements human experts with large language models (LLM) in an agentic environment. The domain knowledge required to answer the event log question was gathered by one ``worker agent". This domain knowledge gathering agent (DKGA) proved effective in the PoC. 
 
-This research concludes that there is an optimal degree of specialization (N_agents − 1) above zero for domain knowledge agents when answering complex prompts. The main research creates three multi agent system setups with varying degrees of specialization for domain knowledge gathering agents. What can be seen is that as the number of specialized agents $N$ increases, the quality of the answer initially increases in terms of integrated domain knowledge (which is linked to the absence of repetition and the reduction of generalized statements). However at a certain point, there are more domain knowledge agents than domain knowledge areas in the prompt at which point the quality of the output decreases again. An exploratory experiment adds additional specialization to the agents by adding a human-in-the-loop (HITL) whereby the user can provide feedback either within-agent (agent is finished once the feedback is processed) or between-agents (which returns to agents after full execution). Of the two setups, the within-agent feedback method was very effective in increasing the quality of the output and the between-agent setup did not. Future research could look at experimenting with the length of prompts and improving the quality of the individual agents with stronger researcher implementations (such as GPT_researcher).  
-    Paper:  Specialization is key: a study on the effects of specialization of LLM agents for the answering of complex prompts
+This research will expand upon the PoC by including more DKGAs with their own domain expertise. The results show that having three specialized DKGAs is much more effective in answering event log questions than one DKGA. Another interesting result is that when there are five DKGAs, the quality of the answer decreases compared to three DKGAs. Therefore, there is an optimum amount of DKGAs. 
+
+A human-in-the-loop experiment (HITL) added the possibility for the user to give feedback after a DKGA has run. This increases the amount of specialization further. The result of the HITL experiment shows  added user-friendliness and a new explainability aspect. However, the quality of the output itself improved only little and  the user should posses some knowledge about prompt engineering to be able to provide correct feedback. An analysis of the references was made and the results show that different search engine tools can significantly influence the quality of the references. 
+
+Future research could look at improving the human-in-the-loop method, measuring the effect of different search engine tools and using different event log questions.
+
+
+Keywords: process mining - multi agent systems - domain knowledge - prompt answering - CrewAI framework
+
+
+    Paper:  Specialization is key: a study on domain knowledge gathering agent specialization in process mining
             Reintje van Gulijk, Peter van der Putten, Aske Plaat
             July 2025
 
