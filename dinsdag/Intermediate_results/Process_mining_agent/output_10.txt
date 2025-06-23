@@ -1,0 +1,26 @@
+### Regulatory Risks in the Loan Application Process
+
+1. **W_Validate application -> W_Validate application**
+   - **Frequency**: 115,590
+   - **Performance**: 38,200.785
+   - **Explanation**: Re-validation of applications suggests potential issues with compliance checks. Repeated validations can indicate unstable criteria or regulatory misunderstandings, leading to increased risks of non-compliance.
+
+2. **W_Call after offers -> A_Cancelled**
+   - **Frequency**: 8,539
+   - **Performance**: 1,998,352.905
+   - **Explanation**: High performance time and frequency of moving from calls after offers to cancellations may indicate poor customer communication or misleading information inconsistent with regulatory standards.
+
+3. **W_Complete application -> W_Call incomplete files**
+   - **Frequency**: 22,264
+   - **Performance**: 70,687.921
+   - **Explanation**: This transition reflects inefficiency that can arise from regulatory documentation requirements not being clearly met or presented, causing incomplete assessments and filings.
+
+4. **W_Call incomplete files -> O_Accepted**
+   - **Frequency**: 4,783
+   - **Performance**: 462,403.858
+   - **Explanation**: The significant delay in processing calls to acceptance suggests issues with meeting regulatory standards on documentation or application completeness.
+
+5. **W_Assess potential fraud -> W_Assess potential fraud**
+   - **Frequency**: 2,866
+   - **Performance**: 36,575.550
+   - **Explanation**: This loop indicates potential flaws in fraud detection that might complicate compliance with financial regulations, risking legal exposure if fraud is inadequately assessed.

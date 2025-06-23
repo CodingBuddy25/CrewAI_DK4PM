@@ -90,31 +90,31 @@ class ResearchCrewFlow(Flow[FlowState]):
             exit()
         elif choice == "2":
             feedback = input(
-                "\nPlease provide additional feedback on what you're looking for in candidates:\n"
+                "\nPlease provide written feedback:\n"
             )
             self.state.human_feedback = feedback
-            print("\nRe-running lead scoring with your feedback...")
+            print("\nRe-running process mining agent with your feedback...")
             return "Return2PM"
         elif choice == "3":
             feedback = input(
-                "\nPlease provide additional feedback on what you're looking for in candidates:\n"
+                "\nPlease provide written feedback:\n"
             )
             self.state.human_feedback = feedback
-            print("\nRe-running lead scoring with your feedback...")
+            print("\nRe-running company agent with your feedback...")
             return "Company_search"
         elif choice == "4":
             feedback = input(
-                "\nPlease provide additional feedback on what you're looking for in candidates:\n"
+                "\nPlease provide written feedback:\n"
             )
             self.state.human_feedback = feedback
-            print("\nRe-running lead scoring with your feedback...")
+            print("\nRe-running process agent with your feedback...")
             return "Process_search"
         elif choice == "5":
             feedback = input(
-                "\nPlease provide additional feedback on what you're looking for in candidates:\n"
+                "\nPlease provide written feedback:\n"
             )
             self.state.human_feedback = feedback
-            print("\nRe-running lead scoring with your feedback...")
+            print("\nRe-running writing agent with your feedback...")
             return "feedback writing"
         else:
             print("Wrong input: exiting the program.")

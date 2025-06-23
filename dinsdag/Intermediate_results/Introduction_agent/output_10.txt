@@ -1,0 +1,1 @@
+focus: Regulatory risks, company: Wells Fargo bank, file: BPI.xes, process: Loan application
