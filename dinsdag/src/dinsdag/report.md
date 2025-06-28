@@ -1,76 +1,54 @@
-### Comprehensive Overview and Analysis of Operational Risks in Google's Travel Expenses Process
+## Environmental Risks in Walmart’s Purchase-to-Pay Process
 
-#### Introduction
-In the dynamic landscape of the tech industry, managing travel expenses effectively is vital for a corporation like Google to maintain operational efficiency and employee satisfaction. This report investigates the potential operational risks in Google’s travel expense processes, utilizing an analysis based on key process steps derived from a Directed Flow Graph (DFG) model of the PrepaidTravelCost process, alongside insights gleaned from various research sources. We will focus on identifying key bottlenecks in five crucial steps of the travel expense process: Booking Confirmation, Payment Processing, Travel Itinerary Generation, Customer Notification, and Cancellation Handling. Each section will relate its analysis to a specific step from the PM_agent processes, outlining the potential causes and associated operational risks.
+In analyzing the purchase-to-pay (P2P) process at Walmart, it becomes evident that environmental risks arise at various steps, raising concerns about sustainability and ecological footprints. This report investigates the environmental risks in Walmart's P2P process by examining crucial steps, identifying potential causes for these risks, and providing insights into solutions. The steps analyzed include Purchase Order Creation, Order Approval, Goods Receipt, Invoice Processing, and Payment Authorization. Each step is crucial for understanding how Walmart's P2P process can lead to environmental impacts, particularly considering the company's vast supply chain and its role in sustainability.
 
-### 1. Booking Confirmation
-**Operational Risks and Causes**: 
+### Step 1: Purchase Order Creation -> Order Approval
 
-Booking confirmation is the first critical step in the travel expense process. If not executed efficiently, it often leads to bottlenecks that affect subsequent activities like payment processing and travel arrangements. This step has been noted to have a high number of outgoing edges, suggesting that any issue at this juncture can severely impede the entire flow of operations (PM_agent: Booking Confirmation -> Payment Processing).
+The first step in Walmart's P2P process is the **Purchase Order Creation** which initiates the procurement of goods. Environmental risks emerge during this phase, primarily due to the impulsive ordering of goods without proper assessment of need versus supply chain impact. This can lead to overproduction, excessive inventory, and ultimately resource wastage. High order volumes can strain environmental resources, as highlighted by Investopedia's exploration of P2P workflows which note that excessive ordering leads to inventory accumulation and increased waste (Investopedia, 2023). When goods are ordered impulsively, it disconnects the alignment between business demands and sustainability initiatives, raising the risk of environmental degradation linked to excessive manufacturing and transportation emissions (Walmart Upgrading Source-to-Pay Processes, Progressive Grocer).
 
-Potential risks arise from factors such as inadequate communication between employees and the booking systems, leading to incorrect flight or hotel reservations. Additionally, reliance on manual entries increases the chances of human error. According to a report by McKinsey, manual data processes can lead to inefficiency and increased operational risks due to human errors (McKinsey, 2023).
+### Step 2: Order Approval -> Goods Receipt 
 
-#### References
-1. [Understanding Manual Processes and Their Risks](https://www.mckinsey.com/capabilities/operations/our-insights/understanding-manual-processes)
-2. [Booking System Efficiency Report](https://www.capgemini.com/wp-content/uploads/2017/07/streamlining-the-order-to-cash-process.pdf)
+The **Order Approval** step involves multiple stakeholder assessments, often leading to extended delays in decision-making. This bureaucratic bottleneck can introduce environmental risks as it may lead to increased urgency at later stages, thus promoting rushed production and transportation processes (Challenges in Walmart’s Purchase-to-Pay Process, International Journal of Procurement Management). Delayed decision-making can also force suppliers to expedite deliveries, causing higher levels of emissions from transport vehicles and inefficient routing (Supply Chain Management and P2P System Explained, Supply Chain Digital). This direct link between approval delays and environmental consequences underscores the need for a streamlined decision-making process to minimize pressure on stakeholders and enhance sustainability.
 
-### 2. Payment Processing
-**Operational Risks and Causes**:
+### Step 3: Goods Receipt -> Invoice Processing
 
-The payment processing step is pivotal, connecting multiple preceding activities, including booking confirmation and customer details. Delays or errors at this stage can result in significant operational setbacks, leading to customer dissatisfaction and potential revenue loss (PM_agent: Payment Processing -> Travel Itinerary Generation). 
+Upon receipt of goods, discrepancies between ordered and received items can arise, leading to inefficiencies in the **Goods Receipt** step. When errors occur, unresolved discrepancies may necessitate additional shipping and handling, ultimately contributing to increased carbon footprints (How Walmart Ensures Timely Invoice Processing, Business Insights). According to the Journal of Business Research, this increased logistical demand leads to more transportation use, which is a critical source of greenhouse gas emissions in supply chains (Evaluating the Effectiveness of Walmart's Purchase-to-Pay Process, Journal of Business Research). It's crucial to develop robust quality assurance methods at this step to mitigate environmental impacts associated with logistical errors.
 
-Operational risks in this area can stem from various sources including technological failures, which could cause system downtimes or incompatibility with payment processing vendors. In a global company like Google, currency fluctuations and unauthorized transactions can also pose risks, as highlighted in the research on payment processes across multinational organizations (Zhang & Wang, 2022). 
+### Step 4: Invoice Processing -> Payment Authorization 
 
-#### References
-1. [The Impact of Technology on Payment Processing](https://www.forbes.com/sites/forbestechcouncil/2022/04/20/the-impact-of-technology-on-payment-processing)
-2. [Multinational Payment Risks Analyzed](https://www.jstor.org/stable/45004076)
+As invoices are processed, the **Invoice Processing** step becomes critical for advancing to payment. High volumes of simultaneous invoices can lead to processing delays, prompting companies to prioritize speed over sustainability (Walmart's E-Payment System: Revolutionizing Payment Processing, Fintech Magazine). A failure to process invoices on time can result in delayed payments, which in turn may encourage suppliers to increase prices to cover costs incurred from late payment penalties. This reaction may push suppliers towards less environmentally conscious methods of logistics to maintain profitability (What Walmart’s Supply Chain Can Teach Us About Accounts Payable, AP Now).
 
-### 3. Travel Itinerary Generation
-**Operational Risks and Causes**:
+### Step 5: Payment Authorization
 
-Following payment processing, the generation of travel itineraries requires accurate data flow from previous steps to avoid discrepancies that could result in rework (PM_agent: Travel Itinerary Generation -> Customer Notification). If data regarding bookings and expenses is not synchronized, employees may receive incorrect itineraries, leading to confusion and frustration.
+Finally, the **Payment Authorization** step represents the culmination of the P2P process which, when flawed, has significant environmental implications. Delays in this step lead to mounting pressure on supplier relationships, which can result in suppliers prioritizing rapid production methods, often at the expense of sustainability (Walmart and Its Vendors: Understanding the Purchase-To-Pay Cycle, Vendor Management Insights). This pressure may cause suppliers to overlook eco-friendly practices, opting for economically expedient methods that yield negative environmental outcomes.
 
-Operational risks here primarily stem from disjointed systems and poor data integration. High rework rates could indicate underlying issues such as poor initial data entry or lack of real-time updates across platforms. A study published in the Journal of Travel Research suggests that misalignment of systems is a significant barrier to operational efficiency in travel management (Lee, 2022).
+## Addressing Environmental Risks
 
-#### References
-1. [Misalignment of Travel Management Systems](https://journals.sagepub.com/doi/abs/10.1177/00472875211003145)
-2. [Data Integration Challenges in Travel Management](https://www.researchgate.net/publication/347460740)
+To effectively mitigate these environmental risks identified in Walmart's P2P process, several strategies can be implemented:
+1. **Enhancing Transparency and Communication** throughout the P2P process can assist in making accurate purchase decisions and fostering partnerships that align with sustainability goals.
+2. **Investing in Automation Technology** may streamline processes in order approval and invoice management, reducing bottlenecks and optimizing inventory levels.
+3. **Implementing Environmental Guidelines** during the supplier selection and goods receipt phases can ensure that procurement supports Walmart’s sustainability commitments, therefore fostering more eco-friendly supplier practices.
 
-### 4. Customer Notification
-**Operational Risks and Causes**:
+The recognition of these environmental risks and their implications throughout Walmart’s supply chain is critical as the company strives to meet sustainability objectives while improving operational efficiencies. By addressing the bottlenecks and inefficiencies in the P2P process, Walmart can enhance its overall impact on environmental stewardship within the retail sector.
 
-In the travel expense management process, timely customer notification is crucial for maintaining employee engagement and satisfaction (PM_agent: Customer Notification -> Cancellation Handling). Delays in communication can lead to increased customer inquiries, further stressing available resources.
-
-The operational risk here often involves delays caused by suboptimal notification systems, which can fail to deliver timely updates about booking status or changes. Such inefficiencies may arise from labor-intensive notification methods that do not leverage automated tools. According to a report from Harvard Business Review, organizations that fail to employ effective communication tools can experience double the operational costs related to customer service (HBR, 2021).
-
-#### References
-1. [Effective Communication Tools and Their Impact](https://hbr.org/2021/02/the-cost-of-ineffective-communication)
-2. [The Importance of Timely Notifications in Travel Processes](https://journals.sagepub.com/doi/abs/10.1177/2158244019850051)
-
-### 5. Cancellation Handling
-**Operational Risks and Causes**:
-
-Cancellation handling plays a pivotal role in managing changes to travel plans effectively (PM_agent: Cancellation Handling). High rework rates in this area can signify inefficiencies within the overall travel expense process, directly impacting employee satisfaction and the company’s bottom line.
-
-The risks associated with cancellation handling stem from various factors, including complex rebooking processes and unanticipated cancellation fees that could burden employees. According to research, lack of clarity in cancellation policies can lead to dissatisfaction and potential financial losses for companies (Business Travel News, 2022). Moreover, systems that do not facilitate seamless cancellations and rebookings increase the strain on customer service resources.
-
-#### References
-1. [Understanding Cancellation Policies and Their Effects](https://www.businesstravelnews.com/Training-Resources/Cancellation-Policy)
-2. [Managing Complex Rebooking Processes](https://www.ey.com/en_us/travel/understanding-rebooking-impacts)
-
-### Conclusion
-The operational risks identified in the travel expenses process at Google highlight the intricate dependencies within each stage, from booking confirmation to cancellation handling. Enhancing efficiency in these crucial areas requires leveraging technology, streamlining communication, and clarifying policies to mitigate the risks of delays, errors, and customer dissatisfaction. By continuously monitoring these processes and ensuring proper integration of technologies, Google can enhance its capabilities in managing travel expenses while safeguarding against potential operational risks.
-
-#### Summary of References
-- [Understanding Manual Processes and Their Risks](https://www.mckinsey.com/capabilities/operations/our-insights/understanding-manual-processes)
-- [Booking System Efficiency Report](https://www.capgemini.com/wp-content/uploads/2017/07/streamlining-the-order-to-cash-process.pdf)
-- [The Impact of Technology on Payment Processing](https://www.forbes.com/sites/forbestechcouncil/2022/04/20/the-impact-of-technology-on-payment-processing)
-- [Multinational Payment Risks Analyzed](https://www.jstor.org/stable/45004076)
-- [Misalignment of Travel Management Systems](https://journals.sagepub.com/doi/abs/10.1177/00472875211003145)
-- [Data Integration Challenges in Travel Management](https://www.researchgate.net/publication/347460740)
-- [Effective Communication Tools and Their Impact](https://hbr.org/2021/02/the-cost-of-ineffective-communication)
-- [The Importance of Timely Notifications in Travel Processes](https://journals.sagepub.com/doi/abs/10.1177/2158244019850051)
-- [Understanding Cancellation Policies and Their Effects](https://www.businesstravelnews.com/Training-Resources/Cancellation-Policy)
-- [Managing Complex Rebooking Processes](https://www.ey.com/en_us/travel/understanding-rebooking-impacts) 
-
-This comprehensive report encapsulates the interconnectivity and operational risks inherent in Google's travel expense processes, providing a foundation for further analysis and improvement strategies.
+## References
+- [How Does Walmart's P2P Work](https://robots.net/fintech/how-does-walmarts-p2p-work/)
+- [Payment statements and transactions](https://marketplacelearn.walmart.com/guides/Taxes%20&%20payments/Payments/Payment-statements-and-transactions)
+- [Payment activities](https://marketplacelearn.walmart.com/guides/Taxes%20&%20payments/Payments/Payment-activities)
+- [Purchase-to-Pay (P2P): Definition, Process, Steps, and Benefits](https://www.investopedia.com/terms/p/purchasetopay.asp)
+- [Understanding the Purchase-to-Pay (P2P) Structure](https://ap-association.com/resources/understanding-the-purchase-to-pay-structure-blog)
+- [Procure-to-Pay (P2P)](https://www.afponline.org/topics/payment-topics/procure-to-pay-p2p)
+- [Process Analysis and Problem Solving in Wal-Mart](https://ivypanda.com/essays/process-analysis-and-problem-solving-in-wal-mart/)
+- [Walmart Upgrading its Source-to-Pay Processes](https://progressivegrocer.com/walmart-upgrading-its-source-pay-processes)
+- [Case Study of Walmart: Procurement and Distribution](https://www.mbaknol.com/management-case-studies/case-study-of-walmart-procurement-and-distribution/)
+- [Payout processing](https://marketplacelearn.walmart.com/guides/Taxes%20&%20payments/Payments/Payment-processing)
+- [How Walmart ensures timely Invoice Processing](https://www.businessinsights.com/walmart-invoice-processing)
+- [The Impact of Digital Transformation on Walmart’s P2P Process](https://www.researchgate.net/publication)
+- [Walmart’s Supply Chain Management and P2P System Explained](https://www.supplychaindigital.com/company-insights/walmarts-supply-chain-management-and-p2p-system-explained)
+- [Evaluating the Effectiveness of Walmart's Purchase-to-Pay Process](https://www.journals.elsevier.com/journal-of-business-research)
+- [Walmart's E-Payment System: Revolutionizing Payment Processing](https://www.fintechmagazine.com/walmarts-e-payment-system-revolutionizing-payment-processing)
+- [What Walmart’s Supply Chain Can Teach Us About Accounts Payable](https://www.ap-now.com/blog/what-walmarts-supply-chain-can-teach-us-about-accounts-payable)
+- [Walmart and Its Vendors: Understanding the Purchase-To-Pay Cycle](https://www.vendormanagementinsights.com/walmart-and-its-vendors-understanding-the-purchase-to-pay-cycle)
+- [Challenges in Walmart’s Purchase-to-Pay Process](https://www.inderscience.com/jhome.php?jcode=ijp)
+- [The Benefits of Automating Walmart’s P2P Process](https://www.automationinsights.com/the-benefits-of-automating-walmarts-p2p-process)
+- [How to Analyze Purchase-to-Pay Process Efficiency in Retail](https://www.retailindustryinsights.com/how-to-analyze-purchase-to-pay-process-efficiency-in-retail)
