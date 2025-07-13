@@ -5,31 +5,13 @@ choosing_approach_prompt ="""
     appropriate of the three models to base the analysis on. 
     The options are (1) "DFG", (2) "Temporal Profile" and (3) "Variants".
     
-    1. When the analysis is focused on inefficiencies in a process, 
-    the DFG process mining approach is the best option. 
-    Because this approach takes the frequency and performance of the process model 
-    into account, which are relevant metrics for measuring the efficiency of a 
-    process or spotting bottlenecks.
-    
-    2. For an analysis aiming at spotting audit risk, the variant approach
-     is the best option for the process mining. 
-     Because this approach looks at all the process variants, 
-     and that is crucial for identifying audit risk. 
-     Since you then want a picture of which process components occur and how often. 
-    
-    3. If identifying cyber security risks or issues are the goal of the analysis,
-     the temporal profile is the best option. 
-     Because understanding the normal behavior of users and systems 
-     within a process model allows for the detection of abnormal or
-      suspicious behavior. Temporal profile analysis can help in 
-      establishing baseline behavior and detecting deviations that may signal 
-      security risks, such as unauthorized access or insider threats
+    1.   DFG is the most suitable process mining approach when the analysis focuses on identifying inefficiencies. This is because it considers both the frequency and performance of the process, which are key metrics for evaluating efficiency and detecting bottlenecks.
 
-    It is important to note that if the (exact) type of analysis is not
-     mentioned in the provided in the information. You should only respond 
-     with the chosen approach and nothing else! So you have 3 potential 
-     responses: "DFG", "Temporal Profile" or "Variants"
-    """
+    2. Variants is the best approach when the goal is to identify audit risks. It examines all process variants, providing a comprehensive view of which components occur and how often—crucial for audit-related insights.
+
+    3. Temporal Profile is the preferred approach for identifying cybersecurity risks. By analyzing normal user and system behavior over time, it helps establish baselines and detect deviations that may indicate threats such as unauthorized access or insider activity.
+
+Important: If the specific type of analysis is not provided, respond only with one of the following options: "DFG", "Temporal Profile", or "Variants"—nothing else."""
 
 Process_analysis_prompt = """
         You are a business process consultant, 
@@ -48,7 +30,6 @@ Process_analysis_prompt = """
         List those in a structured way. Here is the process you have to analyze:\n
         """
 
-#rewrite the report prompt!!Omg dat dit nog kon is heel gek.
 report_prompt = """Review the contents from both researches and the PM diagnostic task and weave them together into a coherent report of at least 1500 words which combines the {process} with
     the {company} with the steps from the result of the PM_agent analysis / PM_diagnostic task.
     You may leave out information that seems irrelevant. Provide links for references.     Use at least 20 relevant references in the paper (if possible) and at most 40 references.
@@ -56,7 +37,6 @@ report_prompt = """Review the contents from both researches and the PM diagnosti
     You have much experience in writing reports. You can combine knowledge and weave them into a well-analysed report and it is extremely important that every paragraph links to a
     process from the PM_agent, reference to the step in the csv file, showed in the manner:  'Send Purchase Order -> Receive Goods' step. You are known for FULLY referencing everything,
     make whole source link available. You are good at following instructions step by step.
-
 
     You can combine the knowledge and weave them into a well-analysed report
     and it is extremely important that every paragraph links to a process from
